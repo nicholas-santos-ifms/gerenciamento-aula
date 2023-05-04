@@ -1,4 +1,4 @@
-package br.edu.ifms.aula.aula;
+package br.edu.ifms.aula;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
