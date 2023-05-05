@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
@@ -26,7 +25,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @param <S>
  * @param <K>
  */
-@RestController
 @Profile(value = {"prod", "test", "dev"})
 public abstract class AbstractBasicController<
             T, DTO, FORM, 

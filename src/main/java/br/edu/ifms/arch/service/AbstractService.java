@@ -28,6 +28,11 @@ public abstract class AbstractService<T, K, F, R extends IArchRepository<T, K>>
     protected ISimpleMapper<T, ?, F> mapper;
 
     @Override
+    public void setMapper(ISimpleMapper mapper) {
+        this.mapper = mapper;
+    }
+
+    @Override
     public Page<T> listar(Pageable paginacao) {
         return repository.findAll(paginacao);
     }
