@@ -10,3 +10,5 @@
 INSERT INTO professor (id, nome, email) VALUES
 (1, 'Nicholas', 'nicholas.santos@ifms.edu.br'),
 (2, 'Laurentino', 'laurentino.dantas@ifms.edu.br');
+
+ALTER SEQUENCE professor_seq RESTART WITH 3;

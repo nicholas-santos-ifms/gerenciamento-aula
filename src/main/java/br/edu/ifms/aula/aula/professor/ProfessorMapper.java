@@ -25,4 +25,7 @@ public interface ProfessorMapper {
 
     @Mapping(target = "id", ignore = true)
     public void update(ProfessorForm dto, @MappingTarget Professor entity);
+
+    @Mapping(target = "id", ignore = true)
+    public Professor toEntity(ProfessorForm form);
 }
