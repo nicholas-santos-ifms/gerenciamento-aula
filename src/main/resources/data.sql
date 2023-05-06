@@ -12,3 +12,9 @@ INSERT INTO professor (id, nome, email) VALUES
 (2, 'Laurentino', 'laurentino.dantas@ifms.edu.br');
 
 ALTER SEQUENCE professor_seq RESTART WITH 3;
+
+INSERT INTO campus (id, nome, created_at) VALUES
+(1, 'Campus Naviraí', now()),
+(2, 'Reitoria', now());
+
+ALTER SEQUENCE campus_sequence RESTART WITH 3;
