@@ -4,7 +4,6 @@
  */
 package br.edu.ifms.aula.professor;
 
-import jakarta.transaction.TransactionScoped;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,17 +25,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/professor")
 public class ProfessorController {
-<<<<<<< HEAD:src/main/java/br/edu/ifms/aula/aula/professor/ProfessorController.java
 
-    @Autowired // faz o Spring criar uma instÃ¢ncia de ProfessorService
+    @Autowired // faz o Spring criar uma instância de ProfessorService
     private ProfessorService service;
-
-=======
     
-    @Autowired // faz o Spring criar uma instância de ProfessorRepository
-    private ProfessorRepository repository;
-    
->>>>>>> 387da15d53663e1522d7f20b0cf4e889db3a56ed:src/main/java/br/edu/ifms/aula/professor/ProfessorController.java
     @GetMapping
     public ResponseEntity<List<ProfessorDto>> listar() {
         List<Professor> listaEntity = service.listar();

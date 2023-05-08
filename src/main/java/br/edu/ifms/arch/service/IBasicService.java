@@ -8,14 +8,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 /**
- * Interface para Servicos.Interface utilizada para definir os métodos básicos para a
-  implementação dos serviços básicos que serão disponibilizados
-  para a aplicação cuja Classe de Negócio seja subclasse de
+ * Interface para Servicos. Interface utilizada para definir os mÃ©todos bÃ¡sicos para a
+  implementaÃ§Ã£o dos serviÃ§os bÃ¡sicos que serÃ£o disponibilizados
+  para a aplicaÃ§Ã£o cuja Classe de NegÃ³cio seja subclasse de
   <class>BaseObject</class>.
  * @param <K>
  * @param <F>
  * @param <R>
- * @param <T>   Classe de Negócio a ser implementada
+ * @param <T>   Classe de NegÃ³cio a ser implementada
  * @since 02/11/2022
  * @author nicho
  */
@@ -23,8 +23,8 @@ public interface IBasicService<T, K, F, R>
     extends IService<T, K, F, R> {
     
     /**
-     * Listagem de dados. Este método tem a finalidade de buscar uma lista de
-     * dados da Classe de Negócio <T> de acordo com a descrição do parÃ¢metro
+     * Listagem de dados. Este mï¿½todo tem a finalidade de buscar uma lista de
+     * dados da Classe de Negï¿½cio <T> de acordo com a descriï¿½ï¿½o do parÃ¢metro
      * NOME e da PAGINACAO
      *
      * @since 11-02-2022

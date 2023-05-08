@@ -12,37 +12,37 @@ import org.springframework.data.domain.Pageable;
 
 /**
  * Interface para Servicos.
- * Interface utilizada para definir os métodos básicos para a
- *  implementação dos serviços básicos que serão disponibilizados
- *  para a aplicação.
+ * Interface utilizada para definir os mÃ©todos bÃ¡sicos para a
+ *  implementaÃ§Ã£o dos serviÃ§os bÃ¡sicos que serÃ£o disponibilizados
+ *  para a aplicaÃ§Ã£o.
  * @since 02/11/2022
  * @author nicho
- * @param <T>   Classe de Negócio a ser implementada
- * @param <K>   Classe que representa a chave primária da Classe de Negócio
- * @param <F>   Classe que representa o formulário no padrão DTO da Classe de Negócio
- * @param <R>   Classe que representa o padrão Repository da classe de negócio
+ * @param <T>   Classe de NegÃ³cio a ser implementada
+ * @param <K>   Classe que representa a chave primÃ¡ria da Classe de NegÃ³cio
+ * @param <F>   Classe que representa o formulÃ¡rio no padrÃ£o DTO da Classe de NegÃ³cio
+ * @param <R>   Classe que representa o padrÃ£o Repository da classe de negÃ³cio
  */
 public interface IService<T, K, F, R> {
     
     /**
-     * Atribuição do Repository.
-     * Este método tem a finalidade de determinar qual será o 
+     * Atribuiï¿½ï¿½o do Repository.
+     * Este mï¿½todo tem a finalidade de determinar qual serï¿½ o 
      *  objeto que representa a classe de persistÃªncia de dados
-     *  no banco de dados conforme o padrão Repository.
+     *  no banco de dados conforme o padrï¿½o Repository.
      * @param repository 
      */
     void setRepository(R repository);
     
     /**
-     * Atribuição do Objeto de Mapeamento. Atribuição do objeto 
-     * responsável por mapear um DTO to Entity e vice-versa
+     * Atribuiï¿½ï¿½o do Objeto de Mapeamento. Atribuiï¿½ï¿½o do objeto 
+     * responsï¿½vel por mapear um DTO to Entity e vice-versa
      * @param mapper 
      */
     void setMapper(ISimpleMapper mapper);
 
     /**
-     * Listagem de dados. Este método tem a finalidade de buscar uma lista de
-     * dados da Classe de Negócio <T> de acordo com a descrição do parâmetro
+     * Listagem de dados. Este mï¿½todo tem a finalidade de buscar uma lista de
+     * dados da Classe de Negï¿½cio <T> de acordo com a descriï¿½ï¿½o do parï¿½metro
      * NOME e da PAGINACAO
      *
      * @since 11-02-2022
@@ -52,8 +52,8 @@ public interface IService<T, K, F, R> {
     Page<T> listar(Pageable paginacao);
 
     /**
-     * Listagem de dados. Este método tem a finalidade de buscar uma lista de
-     * dados da Classe de Negócio <T>.
+     * Listagem de dados. Este mï¿½todo tem a finalidade de buscar uma lista de
+     * dados da Classe de Negï¿½cio <T>.
      *
      * @return Retorna um objeto da classe <class>Set<T></class>
      */
@@ -61,8 +61,8 @@ public interface IService<T, K, F, R> {
 
     /**
      * Buscar dados por ID.
-     * Este método tem a finalidade de buscar um Objeto da Classe
-     *  de Negócio <K> filtrado pela sua chave primária <K>
+     * Este mï¿½todo tem a finalidade de buscar um Objeto da Classe
+     *  de Negï¿½cio <K> filtrado pela sua chave primï¿½ria <K>
      * @param id
      * @return  Retorna um objeto da classe <class>Optional</class>.
      */
