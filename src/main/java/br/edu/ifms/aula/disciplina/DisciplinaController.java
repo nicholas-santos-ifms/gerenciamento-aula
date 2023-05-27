@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.professor;
+package br.edu.ifms.aula.disciplina;
 
 import jakarta.validation.Valid;
 import java.util.List;
@@ -23,36 +23,35 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 1513003
  */
 @RestController
-@RequestMapping("/api/professor")
-public class ProfessorController {
-
-    @Autowired // faz o Spring criar uma instância de ProfessorService
-    private ProfessorService service;
+@RequestMapping("/api/disciplina")
+public class DisciplinaController {
+    @Autowired // faz o Spring criar uma instância de DisciplinaService
+    private DisciplinaService service;
     
     @GetMapping
-    public ResponseEntity<List<ProfessorDto>> listar() {
-        List<Professor> listaEntity = service.listar();
-        List<ProfessorDto> listaDto = ProfessorMapper.INSTANCE.map(listaEntity);
+    public ResponseEntity<List<DisciplinaDto>> listar() {
+        List<Disciplina> listaEntity = service.listar();
+        List<DisciplinaDto> listaDto = DisciplinaMapper.INSTANCE.map(listaEntity);
         return ResponseEntity.ok(listaDto);
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity<ProfessorDto> cadastrar(
-            @RequestBody @Valid ProfessorForm form) {
-        Professor entity = ProfessorMapper.INSTANCE.toEntity(form);
+    public ResponseEntity<DisciplinaDto> cadastrar(
+            @RequestBody @Valid DisciplinaForm form) {
+        Disciplina entity = DisciplinaMapper.INSTANCE.toEntity(form);
         service.salvar(entity);
-        ProfessorDto dto = ProfessorMapper.INSTANCE.toDto(entity);
+        DisciplinaDto dto = DisciplinaMapper.INSTANCE.toDto(entity);
         return ResponseEntity.accepted().body(dto);
     }
     
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<ProfessorDto> atualizar(
+    public ResponseEntity<DisciplinaDto> atualizar(
             @PathVariable Long id,
-            @RequestBody @Valid ProfessorForm form) {
-        Professor entity = service.atualizar(id, form);
-        ProfessorDto dto = ProfessorMapper.INSTANCE.toDto(entity);
+            @RequestBody @Valid DisciplinaForm form) {
+        Disciplina entity = service.atualizar(id, form);
+        DisciplinaDto dto = DisciplinaMapper.INSTANCE.toDto(entity);
         return ResponseEntity.ok(dto);
     }
     
@@ -62,5 +61,4 @@ public class ProfessorController {
         service.excluir(id);
         return ResponseEntity.ok().build();
     }
-
 }
