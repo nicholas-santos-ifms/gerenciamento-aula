@@ -6,10 +6,6 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-import br.edu.ifms.aula.professor.Professor;
-import br.edu.ifms.aula.professor.ProfessorDto;
-import br.edu.ifms.aula.professor.ProfessorForm;
-import br.edu.ifms.aula.professor.ProfessorMapper;
 
 
 @Mapper
