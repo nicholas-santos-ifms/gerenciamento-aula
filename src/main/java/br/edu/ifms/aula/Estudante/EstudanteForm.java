@@ -4,7 +4,6 @@
  */
 package br.edu.ifms.aula.Estudante;
 
-import br.edu.ifms.aula.curso.CursoDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
