@@ -4,11 +4,6 @@
  */
 package br.edu.ifms.aula.Estudante;
 
-import br.edu.ifms.aula.disciplina.Diciplina;
-import br.edu.ifms.aula.disciplina.DiciplinaForm;
-import br.edu.ifms.aula.disciplina.DiciplinaMapper;
-import br.edu.ifms.aula.disciplina.DiciplinaNotFoundException;
-import br.edu.ifms.aula.disciplina.DiciplinaRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

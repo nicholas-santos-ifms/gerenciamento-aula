@@ -6,11 +6,9 @@ package br.edu.ifms.aula.curso;
 
 import br.edu.ifms.arch.BaseObject;
 import br.edu.ifms.aula.campus.Campus;
-import br.edu.ifms.aula.disciplina.Diciplina;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
