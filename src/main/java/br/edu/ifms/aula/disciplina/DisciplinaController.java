@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package br.edu.ifms.aula.disciplina;
+
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+/**
+ *
+ * @author 1513003
+ */
 @RestController
 @RequestMapping("/api/disciplina")
 public class DisciplinaController {
-
-    @Autowired // faz o Spring criar uma inst�ncia de ProfessorService
+    @Autowired // faz o Spring criar uma instância de DisciplinaService
     private DisciplinaService service;
     
     @GetMapping
@@ -58,5 +61,4 @@ public class DisciplinaController {
         service.excluir(id);
         return ResponseEntity.ok().build();
     }
-
 }

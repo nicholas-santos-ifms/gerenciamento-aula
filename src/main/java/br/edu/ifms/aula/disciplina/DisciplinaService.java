@@ -9,10 +9,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+/**
+ *
+ * @author 1513003
+ */
 @Service
 public class DisciplinaService {
-    
     @Autowired
     private DisciplinaRepository repository;
     
@@ -34,7 +36,7 @@ public class DisciplinaService {
     public Disciplina buscarPorId(Long id) {
         Optional<Disciplina> optional = repository.findById(id);
         if (optional.isEmpty()) {
-            String msg = "Não existe a Disciplina para o código [%d] informado";
+            String msg = "Não existe Disciplina para o código [%d] informado";
             throw new DisciplinaNotFoundException(String.format(msg, id));
         }
         return optional.get();

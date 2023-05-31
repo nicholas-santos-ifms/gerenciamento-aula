@@ -4,22 +4,23 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import lombok.AllArgsConstructor;
+import br.edu.ifms.aula.curso.CursoDto;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
-
-@Builder
+/**
+ *
+ * @author 1513003
+ */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class DisciplinaForm {
-    
+
     private String nome;
-    private String email;
-    private double cargaHoraria;
-    private String ementa ;
-} 
+    private Double cargaHoraria;
+    private String ementa;
+    
+    private CursoDto curso;
+}
