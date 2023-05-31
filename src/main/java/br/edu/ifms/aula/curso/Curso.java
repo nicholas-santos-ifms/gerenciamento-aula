@@ -33,5 +33,8 @@ public class Curso extends BaseObject {
     @ManyToOne
     private Campus campus;
     
+<<<<<<< HEAD
     private List<Diciplina> disciplinas;
+=======
+>>>>>>> 491b825186552017160008d38eb80bf829b96243
 }
