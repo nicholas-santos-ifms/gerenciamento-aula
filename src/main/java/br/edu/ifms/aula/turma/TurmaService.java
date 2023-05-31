@@ -5,11 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.ifms.aula.professor.Professor;
-import br.edu.ifms.aula.professor.ProfessorForm;
-import br.edu.ifms.aula.professor.ProfessorMapper;
-import br.edu.ifms.aula.professor.ProfessorNotFoundException;
-import br.edu.ifms.aula.professor.ProfessorRepository;
 
 
 @Service
