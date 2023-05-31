@@ -1,12 +1,15 @@
-package br.edu.ifms.aula.estudante;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package br.edu.ifms.aula.Estudante;
 
-import br.edu.ifms.aula.disciplina.Disciplina;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EstudanteRepository extends JpaRepository<Disciplina, Long> {
-
-    public Estudante save(Estudante entity);
-
-    public void delete(Estudante entity);
+/**
+ *
+ * @author 07041626105
+ */
+public interface EstudanteRepository  extends JpaRepository<Estudante, Long>{
     
 }

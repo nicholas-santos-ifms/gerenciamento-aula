@@ -1,4 +1,9 @@
-package br.edu.ifms.aula.estudante;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package br.edu.ifms.aula.Estudante;
+
 
 import jakarta.validation.Valid;
 import java.util.List;
@@ -14,10 +19,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *
+ * @author 07041626105
+ */
 @RestController
 @RequestMapping("/api/estudante")
 public class EstudanteController {
-     @Autowired // faz o Spring criar uma instância de EstudanteService
+     @Autowired // faz o Spring criar uma instância de DiciplinaService
     private EstudanteService service;
     
     @GetMapping
