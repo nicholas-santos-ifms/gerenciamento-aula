@@ -13,12 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifms.aula.professor.Professor;
-import br.edu.ifms.aula.professor.ProfessorDto;
-import br.edu.ifms.aula.professor.ProfessorForm;
-import br.edu.ifms.aula.professor.ProfessorMapper;
-import br.edu.ifms.aula.professor.ProfessorService;
-
 /**
  *
  * @author 1513003

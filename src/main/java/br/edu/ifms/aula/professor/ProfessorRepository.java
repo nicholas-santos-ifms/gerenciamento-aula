@@ -5,13 +5,11 @@
 package br.edu.ifms.aula.professor;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author 1513003
  */
-@Repository
 public interface ProfessorRepository 
         extends JpaRepository<Professor, Long> {
     
