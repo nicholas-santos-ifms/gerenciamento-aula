@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.ifms.aula.turma;
 
 import java.util.List;
@@ -10,11 +6,16 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
+import br.edu.ifms.aula.professor.Professor;
+import br.edu.ifms.aula.professor.ProfessorDto;
+import br.edu.ifms.aula.professor.ProfessorForm;
+import br.edu.ifms.aula.professor.ProfessorMapper;
+
 
 @Mapper
 public interface TurmaMapper {
-    
-    public static final TurmaMapper INSTANCE = Mappers.getMapper(TurmaMapper.class);
+
+public static final TurmaMapper INSTANCE = Mappers.getMapper(TurmaMapper.class);
     
     public TurmaDto toDto(Turma entity);
     

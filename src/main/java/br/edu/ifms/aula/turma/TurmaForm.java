@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.ifms.aula.turma;
 
 import lombok.AllArgsConstructor;
@@ -17,9 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class TurmaForm {
-    
-    private String nome;
-    private String email;
-    private double cargaHoraria;
-    private String ementa ;
-} 
+	private String nome;
+	private int ano;
+
+}
