@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package br.edu.ifms.aula.disciplina;
 
@@ -13,14 +13,15 @@ import org.mapstruct.factory.Mappers;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
 @Mapper(
         uses = {CursoMapper.class}
 )
 public interface DisciplinaMapper {
     
-    public static final DisciplinaMapper INSTANCE = Mappers.getMapper(DisciplinaMapper.class);
+    public static final DisciplinaMapper INSTANCE = Mappers
+            .getMapper(DisciplinaMapper.class);
     
     public DisciplinaDto toDto(Disciplina entity);
     

@@ -4,11 +4,11 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,13 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
 @RestController
-@RequestMapping("/api/Disciplina")
+@RequestMapping("/api/disciplina")
 public class DisciplinaController {
-
-    @Autowired // faz o Spring criar uma inst�ncia de DisciplinaService
+    @Autowired // faz o Spring criar uma instância de DisciplinaService
     private DisciplinaService service;
     
     @GetMapping
@@ -62,5 +61,4 @@ public class DisciplinaController {
         service.excluir(id);
         return ResponseEntity.ok().build();
     }
-
 }

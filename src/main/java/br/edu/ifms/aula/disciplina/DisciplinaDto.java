@@ -5,19 +5,15 @@
 package br.edu.ifms.aula.disciplina;
 
 import br.edu.ifms.aula.curso.CursoDto;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 @EqualsAndHashCode
 @Builder
 public class DisciplinaDto {

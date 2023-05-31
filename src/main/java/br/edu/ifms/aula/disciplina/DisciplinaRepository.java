@@ -5,13 +5,11 @@
 package br.edu.ifms.aula.disciplina;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
-@Repository
-public interface DisciplinaRepository extends JpaRepository<Disciplina, Long>{
+public interface DisciplinaRepository extends JpaRepository<Disciplina, Long> {
     
 }

@@ -11,19 +11,22 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
+@Service
 public class DisciplinaService {
     @Autowired
     private DisciplinaRepository repository;
     
-    public List<Disciplina> listar(){
+    public List<Disciplina> listar() {
         return repository.findAll();
     }
+    
     public Disciplina salvar(Disciplina entity) {
         Disciplina p = repository.save(entity);
         return p;
     }
+    
     public Disciplina atualizar(Long id, DisciplinaForm form) {
         Disciplina entity = buscarPorId(id);
         DisciplinaMapper.INSTANCE.update(form, entity);

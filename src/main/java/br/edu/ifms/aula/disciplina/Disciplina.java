@@ -5,17 +5,27 @@
 package br.edu.ifms.aula.disciplina;
 
 import br.edu.ifms.aula.curso.Curso;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
-public class Disciplina implements Serializable {
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@Builder
+@Entity
+public class Disciplina {
     @Id
     @GeneratedValue
     private Long id;
@@ -25,5 +35,4 @@ public class Disciplina implements Serializable {
     
     @ManyToOne
     private Curso curso;
-
 }

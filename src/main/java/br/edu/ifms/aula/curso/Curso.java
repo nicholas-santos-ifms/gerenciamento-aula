@@ -30,4 +30,5 @@ public class Curso extends BaseObject {
     
     @ManyToOne
     private Campus campus;
+    
 }
