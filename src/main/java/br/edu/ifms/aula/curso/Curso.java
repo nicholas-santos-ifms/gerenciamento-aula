@@ -9,6 +9,7 @@ import br.edu.ifms.aula.campus.Campus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -30,12 +31,7 @@ public class Curso extends BaseObject {
     
     @ManyToOne
     private Campus campus;
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
-    private List<Diciplina> disciplinas;
-=======
->>>>>>> 491b825186552017160008d38eb80bf829b96243
-=======
->>>>>>> c5298ebcd07548d8d53ce9db01b292b7792cfde9
+
+    private List<Disciplina> disciplinas;
+
 }

@@ -4,6 +4,7 @@
  */
 package br.edu.ifms.aula.Estudante;
 
+import br.edu.ifms.aula.turma.TurmaDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -25,4 +26,5 @@ public class EstudanteDto {
     private String ra;
     private String cpf;
     private String situacao;
+    private TurmaDto turma;
 }

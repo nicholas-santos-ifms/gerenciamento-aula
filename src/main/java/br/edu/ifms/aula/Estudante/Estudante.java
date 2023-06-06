@@ -4,9 +4,11 @@
  */
 package br.edu.ifms.aula.Estudante;
 
+import br.edu.ifms.aula.turma.Turma;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,4 +34,7 @@ public class Estudante {
     private String ra;
     private String cpf;
     private String situacao;
+    
+    @ManyToOne
+    private Turma turma;
 }
