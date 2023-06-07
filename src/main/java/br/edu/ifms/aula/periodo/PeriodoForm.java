@@ -4,6 +4,7 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import br.edu.ifms.aula.tipo_periodo.TipoPeriodo;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

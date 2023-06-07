@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
  *
  * @author 07180871192
  */
+@Service
 public class PeriodoService {
     @Autowired
     private PeriodoRepository repository;

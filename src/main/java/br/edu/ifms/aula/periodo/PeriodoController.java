@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+@RestController
+@RequestMapping("/api/periodo")
 public class PeriodoController {
     @Autowired // faz o Spring criar uma instância de PeriodoService
     private PeriodoService service;
