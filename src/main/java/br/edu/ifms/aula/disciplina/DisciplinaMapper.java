@@ -11,10 +11,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-/**
- *
- * @author 1513003
- */
+
 @Mapper(
         uses = {CursoMapper.class}
 )
