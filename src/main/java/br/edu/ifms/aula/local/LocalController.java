@@ -1,9 +1,6 @@
 
 package br.edu.ifms.aula.local;
 
-import br.edu.ifms.aula.cargaHoraria.Local;
-import br.edu.ifms.aula.cargaHoraria.LocalDto;
-import br.edu.ifms.aula.cargaHoraria.LocalMapper;
 import br.edu.ifms.aula.disciplina.Disciplina;
 import jakarta.validation.Valid;
 import java.util.List;

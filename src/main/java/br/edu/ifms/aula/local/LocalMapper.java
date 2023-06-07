@@ -1,8 +1,5 @@
-
 package br.edu.ifms.aula.local;
 
-
-import br.edu.ifms.aula.curso.CursoMapper;
 import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
