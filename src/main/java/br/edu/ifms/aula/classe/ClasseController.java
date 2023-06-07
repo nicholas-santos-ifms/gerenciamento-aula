@@ -1,4 +1,4 @@
-package br.edu.ifms.aula.turma;
+package br.edu.ifms.aula.classe;
 
 import jakarta.validation.Valid;
 import java.util.List;
@@ -15,35 +15,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/turma")
-public class TurmaController {
-	  @Autowired // faz o Spring criar uma instância de ProfessorService
-	    private TurmaService service;
+@RequestMapping("/api/classe")
+public class ClasseController {
+    @Autowired
+	    private ClasseService service;
 	    
 	    @GetMapping
-	    public ResponseEntity<List<TurmaDto>> listar() {
-	        List<Turma> listaEntity = service.listar();
-	        List<TurmaDto> listaDto = TurmaMapper.INSTANCE.map(listaEntity);
+	    public ResponseEntity<List<ClasseDto>> listar() {
+	        List<Classe> listaEntity = service.listar();
+	        List<ClasseDto> listaDto = ClasseMapper.INSTANCE.map(listaEntity);
 	        return ResponseEntity.ok(listaDto);
 	    }
 
 	    @PostMapping
 	    @Transactional
-	    public ResponseEntity<TurmaDto> cadastrar(
-	            @RequestBody @Valid TurmaForm form) {
-	    	Turma entity = TurmaMapper.INSTANCE.toEntity(form);
+	    public ResponseEntity<ClasseDto> cadastrar(
+	            @RequestBody @Valid ClasseForm form) {
+	    	Classe entity = ClasseMapper.INSTANCE.toEntity(form);
 	        service.salvar(entity);
-	        TurmaDto dto = TurmaMapper.INSTANCE.toDto(entity);
+	        ClasseDto dto = ClasseMapper.INSTANCE.toDto(entity);
 	        return ResponseEntity.accepted().body(dto);
 	    }
 	    
 	    @PutMapping("/{id}")
 	    @Transactional
-	    public ResponseEntity<TurmaDto> atualizar(
+	    public ResponseEntity<ClasseDto> atualizar(
 	            @PathVariable Long id,
-	            @RequestBody @Valid TurmaForm form) {
-	    	Turma entity = service.atualizar(id, form);
-	    	TurmaDto dto = TurmaMapper.INSTANCE.toDto(entity);
+	            @RequestBody @Valid ClasseForm form) {
+	    	Classe entity = service.atualizar(id, form);
+	    	ClasseDto dto = ClasseMapper.INSTANCE.toDto(entity);
 	        return ResponseEntity.ok(dto);
 	    }
 	    
@@ -53,5 +53,4 @@ public class TurmaController {
 	        service.excluir(id);
 	        return ResponseEntity.ok().build();
 	    }
-
 }
