@@ -54,4 +54,16 @@ public class BaseObject implements IBase, Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+	@Override
+	public void setCreatedAt(LocalDateTime value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public LocalDateTime getCreatedAt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
