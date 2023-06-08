@@ -6,12 +6,10 @@ package br.edu.ifms.aula.campus;
 
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
-import java.util.List;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
-import org.springframework.data.domain.Page;
 
 /**
  *
@@ -26,24 +24,8 @@ public interface CampusMapper extends ISimpleMapper<Campus, CampusDto, CampusFor
     @Override
     public Campus formToEntity(CampusForm dto);
 
-    @Override
-    public Campus dtoToEntity(CampusDto dto);
-
-    @Override
-    public  CampusDto toDto(Campus entity);
-
     @InheritConfiguration(name = "update")
     @Override
     public Campus update(CampusForm dto, @MappingTarget Campus entity);
 
-    @Override
-    public List<Campus> toEntityList(List<CampusDto> items);
-
-    @Override
-    public List<CampusDto> toDtoList(List<Campus> items);
-
-    @Override
-    public default Page<CampusDto> toDtoPage(Page<Campus> items) {
-        return items.map(entity -> toDto(entity));
-    }
 }

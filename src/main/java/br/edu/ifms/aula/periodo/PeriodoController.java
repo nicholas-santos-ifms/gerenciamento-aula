@@ -38,7 +38,7 @@ public class PeriodoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<PeriodoDto> cadastrar(
+    public ResponseEntity<PeriodoDto> cadastrar (
             @RequestBody @Valid PeriodoForm form) {
         Periodo entity = PeriodoMapper.INSTANCE.formToEntity(form);
         service.salvar(entity);
