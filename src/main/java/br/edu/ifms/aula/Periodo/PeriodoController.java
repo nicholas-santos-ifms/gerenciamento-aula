@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.Estudante;
-
+package br.edu.ifms.aula.Periodo;
 
 import jakarta.validation.Valid;
 import java.util.List;
@@ -24,38 +23,38 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 07041626105
  */
 @RestController
-@RequestMapping("/api/estudante")
-public class EstudanteController{
-     @Autowired // faz o Spring criar uma instância de DiciplinaService
-    private EstudanteService service;
-    
+@RequestMapping("/api/periodo")
+public class PeriodoController {
+    @Autowired // faz o Spring criar uma instância de PeriodoService
+    private PeriodoService service;
+
     @GetMapping
-    public ResponseEntity<List<EstudanteDto>> listar() {
-        List<Estudante> listaEntity = service.listar();
-        List<EstudanteDto> listaDto = EstudanteMapper.INSTANCE.map(listaEntity);
+    public ResponseEntity<List<PeriodoDto>> listar() {
+        List<Periodo> listaEntity = service.listar();
+        List<PeriodoDto> listaDto = PeriodoMapper.INSTANCE.map(listaEntity);
         return ResponseEntity.ok(listaDto);
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity<EstudanteDto> cadastrar(
-            @RequestBody @Valid EstudanteForm form) {
-        Estudante entity = EstudanteMapper.INSTANCE.toEntity(form);
+    public ResponseEntity<PeriodoDto> cadastrar(
+            @RequestBody @Valid PeriodoForm form) {
+        Periodo entity = PeriodoMapper.INSTANCE.formToEntity(form);
         service.salvar(entity);
-        EstudanteDto dto = EstudanteMapper.INSTANCE.toDto(entity);
+        PeriodoDto dto = PeriodoMapper.INSTANCE.toDto(entity);
         return ResponseEntity.accepted().body(dto);
     }
-    
+
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<EstudanteDto> atualizar(
+    public ResponseEntity<PeriodoDto> atualizar(
             @PathVariable Long id,
-            @RequestBody @Valid EstudanteForm form) {
-        Estudante entity = service.atualizar(id, form);
-        EstudanteDto dto = EstudanteMapper.INSTANCE.toDto(entity);
+            @RequestBody @Valid PeriodoForm form) {
+        Periodo entity = service.atualizar(id, form);
+        PeriodoDto dto = PeriodoMapper.INSTANCE.toDto(entity);
         return ResponseEntity.ok(dto);
     }
-    
+
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity<?> excluir(@PathVariable Long id) {

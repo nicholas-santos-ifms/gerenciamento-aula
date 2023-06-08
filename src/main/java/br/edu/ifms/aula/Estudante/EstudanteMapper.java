@@ -4,8 +4,11 @@
  */
 package br.edu.ifms.aula.Estudante;
 
+import br.edu.ifms.arch.BaseObjectMapper;
+import br.edu.ifms.arch.ISimpleMapper;
 import br.edu.ifms.aula.curso.CursoMapper;
 import java.util.List;
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -16,19 +19,20 @@ import org.mapstruct.factory.Mappers;
  * @author 07041626105
  */
 @Mapper(
-        uses = {CursoMapper.class}
+        config = BaseObjectMapper.class
+       
 )
 
-public interface EstudanteMapper {
+public interface EstudanteMapper extends ISimpleMapper<Estudante, EstudanteDto, EstudanteForm>{
     public static final EstudanteMapper INSTANCE = Mappers.getMapper(EstudanteMapper.class);
     
-    public EstudanteDto toDto(Estudante entity);
+    @InheritConfiguration(name = "toEntity")
+    @Override
+    public Estudante formToEntity(EstudanteForm dto);
     
-    public List<EstudanteDto>map(List<Estudante>itens);
-    
+    @InheritConfiguration(name = "update")
     @Mapping(target = "id", ignore = true)
-    public void update(EstudanteForm dto, @MappingTarget Estudante entity);
+    @Override
+    public Estudante update(EstudanteForm dto, @MappingTarget Estudante entity);
     
-    @Mapping(target = "id", ignore = true)
-    public Estudante toEntity(EstudanteForm form);
 }
