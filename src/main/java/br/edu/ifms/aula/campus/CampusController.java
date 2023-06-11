@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.campus;
 
-import br.edu.ifms.arch.controller.AbstractBasicController;
+import br.edu.ifms.arch.controller.AbstractSimpleController;
 import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,24 +13,24 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
 @RestController
-@RequestMapping("/api/campus")
-public class CampusController extends AbstractBasicController<Campus, CampusDto, CampusForm, CampusRepository, CampusService, Long> {
+@RequestMapping("/api/Campus")
+public class CampusController 
+        extends AbstractSimpleController<Campus, Long, CampusDto, CampusForm, CampusRepository, CampusService>  {
 
     @Autowired
     @Override
     public void setService(CampusService service) {
-        this.service = service;
-        setMapper(CampusMapper.INSTANCE);
+        super.service = service;
+        super.setMapper(CampusMapper.INSTANCE);
     }
 
     @Override
     public URI createUri(Campus entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/campus/{id}")
+        return uriBuilder.path("/api/Campus/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }
-    
 }

@@ -4,10 +4,9 @@
  */
 package br.edu.ifms.aula.curso;
 
+
 import br.edu.ifms.arch.BaseObject;
-import br.edu.ifms.aula.campus.Campus;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,18 +16,17 @@ import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
 @Data
-@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
 @Entity
-@SequenceGenerator(sequenceName = "curso_sequence", name = "baseObjectSequence", allocationSize = 1)
+@SequenceGenerator(sequenceName = "Curso_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Curso extends BaseObject {
-    
-    @ManyToOne
-    private Campus campus;
-    
+
+ 
+    private String sigla;
 }

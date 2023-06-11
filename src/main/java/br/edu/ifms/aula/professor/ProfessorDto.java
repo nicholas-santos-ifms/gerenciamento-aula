@@ -4,24 +4,23 @@
  */
 package br.edu.ifms.aula.professor;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-public class ProfessorDto {
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class ProfessorDto extends AdapterBaseObjectDto {
     
-    private Long id;
-    private String nome;
-    
+	  private String sigla;
 }

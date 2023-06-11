@@ -10,12 +10,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Disciplina não encontrado")
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Disciplina não encontrada")
+
 public class DisciplinaNotFoundException extends ResponseStatusException {
 
-    public DisciplinaNotFoundException(String errorMessage) {
+      public DisciplinaNotFoundException(String errorMessage){
         super(HttpStatus.NOT_FOUND, errorMessage);
     }
     

@@ -5,17 +5,22 @@
 package br.edu.ifms.aula.campus;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
-@SuperBuilder
+@Builder
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class CampusForm extends AdapterBaseObjectForm {
     
+	  private String sigla;
 }

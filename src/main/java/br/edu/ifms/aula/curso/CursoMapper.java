@@ -4,50 +4,33 @@
  */
 package br.edu.ifms.aula.curso;
 
-import br.edu.ifms.aula.campus.*;
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
-import java.util.List;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
-import org.springframework.data.domain.Page;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
 @Mapper(
-        config = BaseObjectMapper.class,
-        uses = {CampusMapper.class}
-        )
+        config = BaseObjectMapper.class
+)
 public interface CursoMapper extends ISimpleMapper<Curso, CursoDto, CursoForm> {
-    
+
     public static final CursoMapper INSTANCE = Mappers.getMapper(CursoMapper.class);
-    
+
     @InheritConfiguration(name = "toEntity")
     @Override
     public Curso formToEntity(CursoForm dto);
-
-    @Override
-    public Curso dtoToEntity(CursoDto dto);
-
-    @Override
-    public  CursoDto toDto(Curso entity);
-
+    
     @InheritConfiguration(name = "update")
+    @Mapping(target = "id", ignore = true)
     @Override
     public Curso update(CursoForm dto, @MappingTarget Curso entity);
 
-    @Override
-    public List<Curso> toEntityList(List<CursoDto> items);
-
-    @Override
-    public List<CursoDto> toDtoList(List<Curso> items);
-
-    @Override
-    public default Page<CursoDto> toDtoPage(Page<Curso> items) {
-        return items.map(entity -> toDto(entity));
-    }
+    
 }

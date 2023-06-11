@@ -4,14 +4,13 @@
  */
 package br.edu.ifms.aula.campus;
 
+
 import br.edu.ifms.arch.repository.IArchRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
-@Repository
-public interface CampusRepository extends IArchRepository<Campus, Long> {
+public interface CampusRepository  extends IArchRepository<Campus, Long>{
     
 }

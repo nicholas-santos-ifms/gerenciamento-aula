@@ -4,35 +4,29 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import br.edu.ifms.aula.curso.Curso;
+import br.edu.ifms.arch.BaseObject;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
+@SuperBuilder
 @Entity
-public class Disciplina {
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String nome;
-    private Double cargaHoraria;
+@SequenceGenerator(sequenceName = "Disciplina_sequence", name = "baseObjectSequence", allocationSize = 1)
+public class Disciplina extends BaseObject {
+
+ 
+    private String cargaHoraria;
     private String ementa;
-    
-    @ManyToOne
-    private Curso curso;
 }

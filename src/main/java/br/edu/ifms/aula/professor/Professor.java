@@ -4,31 +4,30 @@
  */
 package br.edu.ifms.aula.professor;
 
+import br.edu.ifms.arch.BaseObject;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import java.io.Serializable;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
-@Entity // Cria uma tabela no SGBD com o mesmo nome da classe
-@Data // Implementa os métodos GET e SET para cada atributo
-@EqualsAndHashCode // Cria os métodos equals e hashCode que é utilizado para comparação
-@AllArgsConstructor // cria construtores com todos os atributos
-@NoArgsConstructor // cria construtor sem parâmetros
-@Builder // padrão de projeto para construção de objetos
-public class Professor implements Serializable {
+@Data
+@EqualsAndHashCode(callSuper = true)
+@AllArgsConstructor
+@NoArgsConstructor
+@SuperBuilder
+@Entity
+@SequenceGenerator(sequenceName = "Professor_sequence", name = "baseObjectSequence", allocationSize = 1)
+public class Professor extends BaseObject {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String nome;
-    private String email;
+ 
+	private String email;
+    private String siape;
+    private String celular;
 }

@@ -5,17 +5,22 @@
 package br.edu.ifms.aula.campus;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
-@SuperBuilder
+@Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+@SuperBuilder
 public class CampusDto extends AdapterBaseObjectDto {
     
+	  private String sigla;
 }

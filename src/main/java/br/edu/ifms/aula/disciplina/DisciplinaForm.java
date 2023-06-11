@@ -4,23 +4,24 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import br.edu.ifms.aula.curso.CursoDto;
+import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
-@Data
-@EqualsAndHashCode
 @Builder
-public class DisciplinaForm {
-
-    private String nome;
-    private Double cargaHoraria;
-    private String ementa;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class DisciplinaForm extends AdapterBaseObjectForm {
     
-    private CursoDto curso;
+	 private String cargaHoraria;
+	    private String ementa;
 }

@@ -4,21 +4,24 @@
  */
 package br.edu.ifms.aula.campus;
 
-import br.edu.ifms.arch.service.AbstractBasicService;
+import br.edu.ifms.arch.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
 @Service
-public class CampusService extends AbstractBasicService<Campus, Long, CampusForm, CampusRepository> {
+public class CampusService 
+        extends AbstractService<Campus, Long, CampusForm, CampusRepository> {
 
     @Autowired
     @Override
     public void setRepository(CampusRepository repository) {
         super.repository = repository;
-        setMapper(CampusMapper.INSTANCE);
+        super.setMapper(CampusMapper.INSTANCE);
     }
+    
+    
 }

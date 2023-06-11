@@ -4,6 +4,7 @@
  */
 package br.edu.ifms.aula.professor;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,15 +13,14 @@ import lombok.NoArgsConstructor;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-public class ProfessorForm {
+@EqualsAndHashCode(callSuper = true)
+public class ProfessorForm extends AdapterBaseObjectForm {
     
-    private String nome;
-    private String email;
+	  private String sigla;
 }

@@ -5,25 +5,22 @@
 package br.edu.ifms.aula.curso;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
-import br.edu.ifms.aula.campus.CampusDto;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author nicho
+ * @author 07041626105
  */
+@Builder
 @Data
-@SuperBuilder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class CursoForm extends AdapterBaseObjectForm {
     
-    @NotNull
-    public CampusDto campus;
+	  private String sigla;
 }

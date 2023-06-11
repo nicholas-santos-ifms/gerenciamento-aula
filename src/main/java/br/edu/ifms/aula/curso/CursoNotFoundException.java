@@ -10,12 +10,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Curso não encontrado")
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Curso não encontrada")
+
 public class CursoNotFoundException extends ResponseStatusException {
 
-    public CursoNotFoundException(String errorMessage) {
+      public CursoNotFoundException(String errorMessage){
         super(HttpStatus.NOT_FOUND, errorMessage);
     }
     

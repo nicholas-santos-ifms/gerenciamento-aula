@@ -4,23 +4,24 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import br.edu.ifms.aula.curso.CursoDto;
-import lombok.Builder;
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
 @Getter
-@EqualsAndHashCode
-@Builder
-public class DisciplinaDto {
-
-    private Long id;
-    private String nome;
-    private Double cargaHoraria;
-    private String ementa;
-    private CursoDto curso;
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class DisciplinaDto extends AdapterBaseObjectDto {
+    
+	 private String cargaHoraria;
+	    private String ementa;
 }

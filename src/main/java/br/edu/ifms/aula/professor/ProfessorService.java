@@ -4,47 +4,24 @@
  */
 package br.edu.ifms.aula.professor;
 
-import java.util.List;
-import java.util.Optional;
+import br.edu.ifms.arch.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author 1513003
+ * @author 07041626105
  */
 @Service
-public class ProfessorService {
-    
-    @Autowired
-    private ProfessorRepository repository;
-    
-    public List<Professor> listar() {
-        return repository.findAll();
-    }
-    
-    public Professor salvar(Professor entity) {
-        Professor p = repository.save(entity);
-        return p;
-    }
-    
-    public Professor atualizar(Long id, ProfessorForm form) {
-        Professor entity = buscarPorId(id);
-        ProfessorMapper.INSTANCE.update(form, entity);
-        return entity;
-    }
-    
-    public Professor buscarPorId(Long id) {
-        Optional<Professor> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            String msg = "Não existe Professor para o código [%d] informado";
-            throw new ProfessorNotFoundException(String.format(msg, id));
-        }
-        return optional.get();
-    }
+public class ProfessorService 
+        extends AbstractService<Professor, Long, ProfessorForm, ProfessorRepository> {
 
-    public void excluir(Long id) {
-        Professor entity = buscarPorId(id);
-        repository.delete(entity);
+    @Autowired
+    @Override
+    public void setRepository(ProfessorRepository repository) {
+        super.repository = repository;
+        super.setMapper(ProfessorMapper.INSTANCE);
     }
+    
+    
 }
