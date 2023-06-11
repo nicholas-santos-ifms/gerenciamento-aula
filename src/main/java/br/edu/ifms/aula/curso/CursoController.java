@@ -16,7 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author 07041626105
  */
 @RestController
-@RequestMapping("/api/Curso")
+@RequestMapping("/api/curso")
 public class CursoController 
         extends AbstractSimpleController<Curso, Long, CursoDto, CursoForm, CursoRepository, CursoService>  {
 
@@ -29,7 +29,7 @@ public class CursoController
 
     @Override
     public URI createUri(Curso entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/api/Curso/{id}")
+        return uriBuilder.path("/api/curso/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }

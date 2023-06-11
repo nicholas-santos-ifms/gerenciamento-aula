@@ -16,7 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author 07041626105
  */
 @RestController
-@RequestMapping("/api/Professor")
+@RequestMapping("/api/professor")
 public class ProfessorController 
         extends AbstractSimpleController<Professor, Long, ProfessorDto, ProfessorForm, ProfessorRepository, ProfessorService>  {
 
@@ -29,7 +29,7 @@ public class ProfessorController
 
     @Override
     public URI createUri(Professor entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/api/Professor/{id}")
+        return uriBuilder.path("/api/professor/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }

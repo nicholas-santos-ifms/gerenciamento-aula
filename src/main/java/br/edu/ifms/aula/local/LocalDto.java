@@ -22,5 +22,5 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class LocalDto extends AdapterBaseObjectDto {
     
-	  private String sigla;
+	
 }
