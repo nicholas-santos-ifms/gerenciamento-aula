@@ -22,5 +22,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class ProfessorDto extends AdapterBaseObjectDto {
     
-	  private String sigla;
+	 	private String email;
+    private String siape;
+    private String celular;
 }

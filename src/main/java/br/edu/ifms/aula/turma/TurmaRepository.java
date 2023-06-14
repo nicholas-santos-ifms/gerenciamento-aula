@@ -1,8 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.local;
+package br.edu.ifms.aula.turma;
 
 import br.edu.ifms.arch.repository.IArchRepository;
 import org.springframework.stereotype.Repository;
@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
  * @author 07041626105
  */
 @Repository
-public interface LocalRepository  extends IArchRepository<Local, Long>{
+public interface TurmaRepository  extends IArchRepository<Turma, Long>{
     
 }

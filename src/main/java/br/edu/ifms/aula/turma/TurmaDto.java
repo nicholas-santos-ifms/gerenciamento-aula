@@ -2,27 +2,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.professor;
+package br.edu.ifms.aula.turma;
 
-import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
+import br.edu.ifms.aula.curso.CursoDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author 07041626105
  */
-@Builder
-@Data
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class ProfessorForm extends AdapterBaseObjectForm {
+@SuperBuilder
+public class TurmaDto extends AdapterBaseObjectDto {
     
-	 	private String email;
-    private String siape;
-    private String celular;
+    private int ano;
+    private String nomeCurso;
+    private String nomeCampus;
+//    private CursoDto curso;
 }

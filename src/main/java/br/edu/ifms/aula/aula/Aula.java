@@ -6,6 +6,7 @@ package br.edu.ifms.aula.aula;
 
 
 
+import br.edu.ifms.arch.BaseObject;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
@@ -27,7 +28,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Entity
 @SequenceGenerator(sequenceName = "Aula_sequence", name = "baseObjectSequence", allocationSize = 1)
-public class Aula {
+public class Aula extends BaseObject {
  
     private int sequencia;
     private LocalDate data;
