@@ -4,6 +4,11 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,11 +26,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class PeriodoForm {
-
+    @NotNull
+    @NotEmpty
+    @NotBlank
     private String nome;
     private TipoPeriodo tipoPeriodo;
+    @NotNull
     private int numero;
+    @Positive
+    @FutureOrPresent
+    @NotNull
     private int ano;
+    @FutureOrPresent
+    @NotNull
     private LocalDate inicio;
+    @NotNull
     private LocalDate fim;
 }

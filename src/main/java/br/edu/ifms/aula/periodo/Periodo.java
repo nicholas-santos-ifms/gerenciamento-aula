@@ -4,16 +4,14 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import br.edu.ifms.arch.BaseObject;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import java.io.Serializable;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -21,16 +19,13 @@ import lombok.NoArgsConstructor;
  */
 @Entity
 @Data
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 
-public class Periodo implements Serializable{
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String nome;
+public class Periodo extends BaseObject {
+    
     private TipoPeriodo tipoPeriodo;
     private int numero;
     private int ano;

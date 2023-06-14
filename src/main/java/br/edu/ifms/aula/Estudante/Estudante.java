@@ -4,14 +4,13 @@
  */
 package br.edu.ifms.aula.Estudante;
 
+import br.edu.ifms.arch.BaseObject;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -19,16 +18,13 @@ import lombok.NoArgsConstructor;
  */
 @Entity
 @Data
-@EqualsAndHashCode
+@EqualsAndHashCode (callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 
-public class Estudante {
-    @Id
-     @GeneratedValue
-    private Long id;
-    private String nome;
+public class Estudante extends BaseObject{
+    
     private String ra;
     private String cpf;
     private String situacao;
