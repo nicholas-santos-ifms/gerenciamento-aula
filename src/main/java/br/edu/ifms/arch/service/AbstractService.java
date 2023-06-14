@@ -67,7 +67,7 @@ public abstract class AbstractService<T, K, F, R extends IArchRepository<T, K>>
                 .map(entity -> mapper.update(form, entity))
                 .orElseThrow(() -> new BaseObjectNotFoundException(
                 String
-                        .format("Não existe objetio da classe %s com o código %s.",
+                        .format("NÃ£o existe objetio da classe %s com o cÃ³digo %s.",
                                 this.getClass().getName(), id.toString())
         ));
     }
@@ -80,7 +80,7 @@ public abstract class AbstractService<T, K, F, R extends IArchRepository<T, K>>
                     return entity;
                 })
                 .orElseThrow(() -> new BaseObjectNotFoundException(
-                "Não é possível excluir o registro solicitado."
+                "NÃ£o Ã© possÃ­vel excluir o registro solicitado."
         ));
     }
 
