@@ -1,19 +1,21 @@
 package br.edu.ifms.aula.turma;
+
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
+import br.edu.ifms.aula.curso.CursoDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-public class TurmaDto {
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class TurmaDto extends AdapterBaseObjectDto {
 
-	private Long id;
-    private String nome;
     private int ano;
+    private String nomeCurso;
+    private String nomeCampus;
 }
