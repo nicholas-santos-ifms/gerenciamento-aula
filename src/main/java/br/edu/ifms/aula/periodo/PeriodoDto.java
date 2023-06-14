@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -15,7 +16,7 @@ import lombok.Getter;
  */
 @Getter
 @EqualsAndHashCode
-@Builder
+@SuperBuilder
 public class PeriodoDto {
 
     private Long id;

@@ -4,18 +4,21 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import br.edu.ifms.arch.BaseObject;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -24,17 +27,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
 @Entity
-public class Periodo {
-    
-    @Id
-    @GeneratedValue
-    private Long id;
-    
-    @Column(columnDefinition = "varchar(255) not null")
-    private String nome;
+@SequenceGenerator(sequenceName = "campus_sequence",name="base")
+public class Periodo extends BaseObject {
     
     @Column(columnDefinition = "varchar(255) not null")
     @Enumerated(EnumType.STRING)

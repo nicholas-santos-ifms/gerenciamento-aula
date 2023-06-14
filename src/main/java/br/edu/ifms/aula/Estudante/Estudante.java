@@ -19,16 +19,12 @@ import lombok.NoArgsConstructor;
  */
 @Entity
 @Data
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 
 public class Estudante {
-    @Id
-     @GeneratedValue
-    private Long id;
-    private String nome;
     private String ra;
     private String cpf;
     private String situacao;
