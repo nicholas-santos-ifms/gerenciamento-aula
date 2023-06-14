@@ -2,7 +2,6 @@ package br.edu.ifms.aula.turma;
 
 import br.edu.ifms.arch.BaseObject;
 import br.edu.ifms.aula.curso.Curso;
-import br.edu.ifms.aula.periodo.Periodo;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -24,11 +23,7 @@ public class Turma extends BaseObject {
 
     @Column(columnDefinition = "integer not null")
     private int ano;
-
+    
     @ManyToOne
     private Curso curso;
-
-    @ManyToOne
-    private Periodo periodo;
-
 }

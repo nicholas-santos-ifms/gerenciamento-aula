@@ -5,7 +5,6 @@
 package br.edu.ifms.aula.periodo;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
-import br.edu.ifms.aula.disciplina.DisciplinaDto;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Min;
@@ -43,6 +42,4 @@ public class PeriodoForm extends AdapterBaseObjectForm {
     @NotNull
     @Future
     private LocalDate fim;
-    
-    private DisciplinaDto disciplina;
 }

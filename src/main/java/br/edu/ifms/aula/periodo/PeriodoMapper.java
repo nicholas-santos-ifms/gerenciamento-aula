@@ -6,7 +6,6 @@ package br.edu.ifms.aula.periodo;
 
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
-import br.edu.ifms.aula.disciplina.DisciplinaMapper;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
@@ -17,8 +16,7 @@ import org.mapstruct.factory.Mappers;
  * @author 1513003
  */
 @Mapper(
-        config = BaseObjectMapper.class,
-        uses = { DisciplinaMapper.class }
+        config = BaseObjectMapper.class
 )
 public interface PeriodoMapper extends ISimpleMapper<Periodo, PeriodoDto, PeriodoForm> {
     

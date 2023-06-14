@@ -3,7 +3,6 @@ package br.edu.ifms.aula.turma;
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
 import br.edu.ifms.aula.curso.CursoMapper;
-import br.edu.ifms.aula.periodo.PeriodoMapper;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,7 +11,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(
         config = BaseObjectMapper.class,
-        uses = { CursoMapper.class, PeriodoMapper.class }
+        uses = { CursoMapper.class }
 )
 public interface TurmaMapper extends ISimpleMapper<Turma, TurmaDto, TurmaForm> {
 
