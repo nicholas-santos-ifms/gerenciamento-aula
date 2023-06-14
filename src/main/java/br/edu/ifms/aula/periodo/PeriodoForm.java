@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class PeriodoForm {
+public class PeriodoForm extends AdapterBaseObject{
 
     private String nome;
     private TipoPeriodo tipoPeriodo;
@@ -26,4 +26,6 @@ public class PeriodoForm {
     private int ano;
     private LocalDate inicio;
     private LocalDate fim;
+    
+    private DisciplinaDto disciplina;
 }

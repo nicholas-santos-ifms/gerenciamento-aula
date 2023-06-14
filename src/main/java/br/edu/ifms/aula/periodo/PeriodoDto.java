@@ -25,4 +25,6 @@ public class PeriodoDto {
     private int ano;
     private LocalDate inicio;
     private LocalDate fim;
+    
+    private DisciplinaDto 
 }

@@ -15,7 +15,7 @@ import org.mapstruct.factory.Mappers;
  * @author 07180871192
  */
 @Mapper
-public interface PeriodoMapper {
+public interface PeriodoMapper entends ISimpleMapper<Periodo,PeriodoDto,PeriodoForm>{
     public static final PeriodoMapper INSTANCE = Mappers.getMapper(PeriodoMapper.class);
     
     public PeriodoDto toDto(Periodo entity);
