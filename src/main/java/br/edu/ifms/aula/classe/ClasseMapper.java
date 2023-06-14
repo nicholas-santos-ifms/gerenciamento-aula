@@ -2,8 +2,6 @@ package br.edu.ifms.aula.classe;
 
 import java.util.List;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 @Mapper

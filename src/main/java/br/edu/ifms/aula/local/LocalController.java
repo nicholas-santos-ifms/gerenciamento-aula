@@ -21,7 +21,7 @@ public class LocalController {
     
     @GetMapping
     public ResponseEntity<List<LocalDto>> listar() {
-        List<Disciplina> listaEntity = service.listar();
+        List<Local> listaEntity = service.listar();
         List<LocalDto> listaDto = LocalMapper.INSTANCE.map(listaEntity);
         return ResponseEntity.ok(listaDto);
     }
