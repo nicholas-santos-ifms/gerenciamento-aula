@@ -4,6 +4,7 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import br.edu.ifms.aula.disciplina.*;
 import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
+@RestController
+@RequestMapping("/api/periodo")
 public class PeriodoController {
     @Autowired // faz o Spring criar uma instância de PeriodoService
     private PeriodoService service;
@@ -33,9 +38,9 @@ public class PeriodoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<PeriodoDto> cadastrar(
+    public ResponseEntity<PeriodoDto> cadastrar (
             @RequestBody @Valid PeriodoForm form) {
-        Periodo entity = PeriodoMapper.INSTANCE.toEntity(form);
+        Periodo entity = PeriodoMapper.INSTANCE.formToEntity(form);
         service.salvar(entity);
         PeriodoDto dto = PeriodoMapper.INSTANCE.toDto(entity);
         return ResponseEntity.accepted().body(dto);
@@ -57,5 +62,4 @@ public class PeriodoController {
         service.excluir(id);
         return ResponseEntity.ok().build();
     }
-
 }

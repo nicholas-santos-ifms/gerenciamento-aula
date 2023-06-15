@@ -4,42 +4,47 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import java.time.LocalDate;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
-@Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class PeriodoForm {
+    
     @NotNull
     @NotEmpty
     @NotBlank
     private String nome;
+    
     private TipoPeriodo tipoPeriodo;
+    
     @NotNull
-    private int numero;
+    @Min(1)
+    private Integer numero;
+    
+    @NotNull
     @Positive
-    @FutureOrPresent
+    private Integer ano;
+    
     @NotNull
-    private int ano;
     @FutureOrPresent
-    @NotNull
     private LocalDate inicio;
+    
     @NotNull
+    @Future
     private LocalDate fim;
 }

@@ -4,14 +4,17 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import br.edu.ifms.aula.disciplina.*;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
+@Service
 public class PeriodoService {
     @Autowired
     private PeriodoRepository repository;
@@ -34,7 +37,7 @@ public class PeriodoService {
     public Periodo buscarPorId(Long id) {
         Optional<Periodo> optional = repository.findById(id);
         if (optional.isEmpty()) {
-            String msg = "Não existe periodo para o código [%d] informado";
+            String msg = "Não existe Periodo para o código [%d] informado";
             throw new PeriodoNotFoundException(String.format(msg, id));
         }
         return optional.get();

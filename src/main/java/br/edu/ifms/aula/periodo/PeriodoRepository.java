@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
 public interface PeriodoRepository extends JpaRepository<Periodo, Long> {
     

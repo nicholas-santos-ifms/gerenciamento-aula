@@ -1,26 +1,30 @@
 package br.edu.ifms.aula.turma;
 
-import java.util.List;
+import br.edu.ifms.arch.BaseObjectMapper;
+import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.aula.curso.CursoMapper;
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 
 
 
-@Mapper
-public interface TurmaMapper {
+@Mapper(
+        config = BaseObjectMapper.class,
+        uses = {CursoMapper.class}
+)
+public interface TurmaMapper  extends ISimpleMapper<Turma, TurmaDto, TurmaForm>{
 
-public static final TurmaMapper INSTANCE = Mappers.getMapper(TurmaMapper.class);
     
-    public TurmaDto toDto(Turma entity);
+    public static final TurmaMapper INSTANCE = Mappers.getMapper(TurmaMapper.class);
     
-    public List<TurmaDto> map(List<Turma> items);
+    @InheritConfiguration(name ="toEntity")
+    @Override
+    public Turma formToEntity(TurmaForm dto);
 
-    @Mapping(target = "id", ignore = true)
-    public void update(TurmaForm dto, @MappingTarget Turma entity);
-
-    @Mapping(target = "id", ignore = true)
-    public Turma toEntity(TurmaForm form);
+    @InheritConfiguration (name = "update")
+    @Override
+    public Turma update(TurmaForm dto,@MappingTarget Turma entity);
 }

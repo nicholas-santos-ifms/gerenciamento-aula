@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
 @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Periodo não encontrado")
 public class PeriodoNotFoundException extends ResponseStatusException {

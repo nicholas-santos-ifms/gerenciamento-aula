@@ -11,17 +11,18 @@ import lombok.Getter;
 
 /**
  *
- * @author 02709564173
+ * @author 1513003
  */
 @Getter
 @EqualsAndHashCode
 @Builder
 public class PeriodoDto {
+
     private Long id;
     private String nome;
     private TipoPeriodo tipoPeriodo;
-    private int numero;
-    private int ano;
+    private Integer numero;
+    private Integer ano;
     private LocalDate inicio;
     private LocalDate fim;
 }
