@@ -4,12 +4,12 @@
  */
 package br.edu.ifms.aula.periodo;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
  *
  * @author 1513003
  */
-public interface PeriodoRepository extends JpaRepository<Periodo, Long> {
+public interface PeriodoRepository extends IArchRepository<Periodo, Long> {
     
 }

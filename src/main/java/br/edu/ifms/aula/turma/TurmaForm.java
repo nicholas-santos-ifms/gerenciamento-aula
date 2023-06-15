@@ -10,13 +10,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-
 @SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode (callSuper = true)
-public class TurmaForm extends AdapterBaseObjectForm{
+@EqualsAndHashCode(callSuper = true)
+public class TurmaForm extends AdapterBaseObjectForm {
+
     @Min(1)
     private int ano;
     

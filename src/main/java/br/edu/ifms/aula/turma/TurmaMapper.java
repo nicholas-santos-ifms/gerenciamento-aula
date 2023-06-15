@@ -8,23 +8,29 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-
-
-
 @Mapper(
         config = BaseObjectMapper.class,
-        uses = {CursoMapper.class}
+        uses = { CursoMapper.class }
 )
-public interface TurmaMapper  extends ISimpleMapper<Turma, TurmaDto, TurmaForm>{
+public interface TurmaMapper extends ISimpleMapper<Turma, TurmaDto, TurmaForm> {
 
-    
     public static final TurmaMapper INSTANCE = Mappers.getMapper(TurmaMapper.class);
-    
-    @InheritConfiguration(name ="toEntity")
+
+    @InheritConfiguration(name = "toEntity")
     @Override
     public Turma formToEntity(TurmaForm dto);
 
-    @InheritConfiguration (name = "update")
+    @InheritConfiguration(name = "update")
     @Override
-    public Turma update(TurmaForm dto,@MappingTarget Turma entity);
+    public Turma update(TurmaForm dto, @MappingTarget Turma entity);
+
+    @Mapping(target = "curso", ignore = true)
+    @Override
+    public Turma dtoToEntity(TurmaDto dto);
+
+    @Mapping(target = "nomeCurso", source = "entity.curso.nome")
+    @Mapping(target = "nomeCampus", source = "entity.curso.campus.nome")
+    @Override
+    public TurmaDto toDto(Turma entity);
+
 }

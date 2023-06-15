@@ -4,19 +4,24 @@
  */
 package br.edu.ifms.aula.periodo;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
 import java.time.LocalDate;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author 1513003
  */
 @Getter
-@EqualsAndHashCode
-@Builder
-public class PeriodoDto {
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class PeriodoDto extends AdapterBaseObjectDto {
 
     private Long id;
     private String nome;
