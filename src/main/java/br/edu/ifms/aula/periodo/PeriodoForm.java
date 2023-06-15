@@ -4,28 +4,46 @@
  */
 package br.edu.ifms.aula.periodo;
 
-import br.edu.ifms.aula.tipo_periodo.TipoPeriodo;
+import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-
-@Builder
+/**
+ *
+ * @author 1513003
+ */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-public class PeriodoForm extends AdapterBaseObject{
-
-    private String nome;
-    private TipoPeriodo tipoPeriodo;
-    private int numero;
-    private int ano;
-    private LocalDate inicio;
-    private LocalDate fim;
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class PeriodoForm extends AdapterBaseObjectForm {
     
-    private DisciplinaDto disciplina;
+    @NotNull
+    private TipoPeriodo tipoPeriodo;
+    
+    @NotNull
+    @Min(1)
+    private Integer numero;
+    
+    @NotNull
+    @Positive
+    private Integer ano;
+    
+    @NotNull
+    @FutureOrPresent
+    private LocalDate inicio;
+    
+    @NotNull
+    @Future
+    private LocalDate fim;
 }

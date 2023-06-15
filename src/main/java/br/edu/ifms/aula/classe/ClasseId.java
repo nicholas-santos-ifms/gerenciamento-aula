@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.disciplina;
+package br.edu.ifms.aula.classe;
 
-import br.edu.ifms.aula.curso.CursoDto;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,11 +21,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
-public class DisciplinaForm {
-
-    private String nome;
-    private Double cargaHoraria;
-    private String ementa;
+@Embeddable
+public class ClasseId {
     
-    private CursoDto curso;
+    @Column(name = "disciplina_id")
+    private Long disciplinaId;
+    
+    @Column(name = "periodo_id")
+    private Long periodoId;
+    
+    @Column(name = "turma_id")
+    private Long turmaId;
 }

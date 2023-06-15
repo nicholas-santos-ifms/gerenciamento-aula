@@ -4,27 +4,31 @@
  */
 package br.edu.ifms.aula.periodo;
 
-import java.util.List;
+import br.edu.ifms.arch.BaseObjectMapper;
+import br.edu.ifms.arch.ISimpleMapper;
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
  *
- * @author 07180871192
+ * @author 1513003
  */
-@Mapper
-public interface PeriodoMapper entends ISimpleMapper<Periodo,PeriodoDto,PeriodoForm>{
-    public static final PeriodoMapper INSTANCE = Mappers.getMapper(PeriodoMapper.class);
+@Mapper(
+        config = BaseObjectMapper.class
+)
+public interface PeriodoMapper extends ISimpleMapper<Periodo, PeriodoDto, PeriodoForm> {
     
-    public PeriodoDto toDto(Periodo entity);
+    public static final PeriodoMapper INSTANCE = Mappers
+            .getMapper(PeriodoMapper.class);
+
+    @InheritConfiguration(name = "toEntity")
+    @Override
+    public Periodo formToEntity(PeriodoForm dto);
+
+    @InheritConfiguration(name = "update")
+    @Override
+    public Periodo update(PeriodoForm dto, @MappingTarget Periodo entity);
     
-    public List<PeriodoDto> map(List<Periodo> items);
-
-    @Mapping(target = "id", ignore = true)
-    public void update(PeriodoForm dto, @MappingTarget Periodo entity);
-
-    @Mapping(target = "id", ignore = true)
-    public Periodo toEntity(PeriodoForm form);
 }

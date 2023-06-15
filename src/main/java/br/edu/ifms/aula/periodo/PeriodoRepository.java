@@ -1,16 +1,15 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package br.edu.ifms.aula.periodo;
 
-import br.edu.ifms.aula.professor.Professor;
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
  *
- * @author 07180871192
+ * @author 1513003
  */
-public interface PeriodoRepository extends JpaRepository<Periodo, Long> {
+public interface PeriodoRepository extends IArchRepository<Periodo, Long> {
     
 }

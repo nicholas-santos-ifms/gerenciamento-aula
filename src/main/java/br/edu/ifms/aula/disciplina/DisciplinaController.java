@@ -17,19 +17,20 @@ import org.springframework.web.util.UriComponentsBuilder;
  */
 @RestController
 @RequestMapping("/api/disciplina")
-public class DisciplinaController extends AbstractSimpleController <Disciplina, Long, DisciplinaDto, DisciplinaForm, DisciplinaRepository, DisciplinaService>{
+public class DisciplinaController extends AbstractSimpleController
+        <Disciplina, Long, DisciplinaDto, DisciplinaForm, DisciplinaRepository, DisciplinaService> {
 
     @Autowired
     @Override
     public void setService(DisciplinaService service) {
         super.service = service;
+        super.setMapper(DisciplinaMapper.INSTANCE);
     }
-    
+
     @Override
-    public URI createUri(Disciplina entity, UriComponentsBuilder uriBuilder){
+    public URI createUri(Disciplina entity, UriComponentsBuilder uriBuilder) {
         return uriBuilder.path("/api/disciplina/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }
-    
 }

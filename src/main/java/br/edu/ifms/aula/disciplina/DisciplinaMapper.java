@@ -6,7 +6,6 @@ package br.edu.ifms.aula.disciplina;
 
 import br.edu.ifms.arch.ISimpleMapper;
 import br.edu.ifms.aula.curso.CursoMapper;
-import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -19,7 +18,7 @@ import org.mapstruct.factory.Mappers;
 @Mapper(
         uses = {CursoMapper.class}
 )
-public interface DisciplinaMapper extends ISimpleMapper<Disciplina,DisciplinaDto,DisciplinaForm>{
+public interface DisciplinaMapper extends ISimpleMapper<Disciplina, DisciplinaDto, DisciplinaForm> {
     
    public static final DisciplinaMapper INSTANCE = Mappers
             .getMapper(DisciplinaMapper.class);
@@ -32,5 +31,5 @@ public interface DisciplinaMapper extends ISimpleMapper<Disciplina,DisciplinaDto
     @Override
     public Disciplina update(DisciplinaForm dto, @MappingTarget Disciplina entity);
     
-    
+
 }
