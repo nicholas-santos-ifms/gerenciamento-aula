@@ -40,9 +40,9 @@ public class Periodo extends BaseObject {
     @Column(columnDefinition = "int not null")
     private Integer ano;
     
-    @Column(columnDefinition = "time with time zone not null")
+    @Column(nullable = false)
     private LocalDate inicio;
     
-    @Column(columnDefinition = "time with time zone not null")
+    @Column(nullable = false)
     private LocalDate fim;
 }
