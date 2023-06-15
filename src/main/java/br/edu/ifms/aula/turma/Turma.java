@@ -3,7 +3,12 @@ package br.edu.ifms.aula.turma;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
 import java.io.Serializable;
+import java.util.List;
+
+import br.edu.ifms.aula.estudante.Estudante;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,4 +27,7 @@ public class Turma implements Serializable {
 	private Long id;
 	private String nome;
 	private int ano;
+
+	@OneToMany(mappedBy = "turma")
+	private List<Estudante> listaEstudantes;
 }
