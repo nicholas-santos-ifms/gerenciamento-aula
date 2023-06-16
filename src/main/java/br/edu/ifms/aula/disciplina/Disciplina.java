@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.ifms.aula.disciplina;
 
 import br.edu.ifms.aula.curso.Curso;
@@ -15,10 +11,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-/**
- *
- * @author 1513003
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Disciplina {
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "disciplina_sequence")
     private Long id;
     private String nome;
     private Double cargaHoraria;

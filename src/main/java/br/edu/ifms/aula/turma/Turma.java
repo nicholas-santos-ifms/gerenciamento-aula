@@ -2,15 +2,16 @@ package br.edu.ifms.aula.turma;
 
 import br.edu.ifms.arch.BaseObject;
 import br.edu.ifms.aula.curso.Curso;
+import br.edu.ifms.aula.periodo.Periodo;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.ManyToAny;
 
 @Entity // Cria uma tabela no SGBD com o mesmo nome da classe
 @SequenceGenerator(sequenceName = "turma_sequence", name = "baseObjectSequence", allocationSize = 1)
@@ -24,6 +25,9 @@ public class Turma extends BaseObject {
     @Column(columnDefinition = "INTEGER NOT NULL")
     private int ano;
     
-    @ManyToAny
+    @ManyToOne
     private Curso curso;
+    
+    @ManyToOne
+    private Periodo periodo;
 }

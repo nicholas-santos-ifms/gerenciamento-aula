@@ -1,10 +1,12 @@
 package br.edu.ifms.aula.periodo;
 
 import br.edu.ifms.arch.BaseObject;
+import br.edu.ifms.aula.disciplina.Disciplina;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;

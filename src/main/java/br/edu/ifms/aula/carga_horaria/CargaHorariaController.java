@@ -1,4 +1,4 @@
-package br.edu.ifms.aula.periodo;
+package br.edu.ifms.aula.carga_horaria;
 
 import br.edu.ifms.arch.controller.AbstractSimpleController;
 import java.net.URI;
@@ -8,21 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping("/api/periodo")
-public class PeriodoController extends AbstractSimpleController<Periodo, Long, PeriodoDto, PeriodoForm, PeriodoRepository, PeriodoService> {
+@RequestMapping("/api/cargaHoraria")
+public class CargaHorariaController extends AbstractSimpleController<CargaHoraria, Long, CargaHorariaDto, CargaHorariaForm, CargaHorariaRepository, CargaHorariaService> {
 
     @Autowired
     @Override
-    public void setService(PeriodoService service) {
+    public void setService(CargaHorariaService service) {
         super.service = service;
-        super.setMapper(PeriodoMapper.INSTANCE);
+        super.setMapper(CargaHorariaMapper.INSTANCE);
     }
 
     @Override
-    public URI createUri(Periodo entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/api/periodo/{id}")
+    public URI createUri(CargaHoraria entity, UriComponentsBuilder uriBuilder) {
+        return uriBuilder.path("/api/cargaHoraria/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }
-
 }

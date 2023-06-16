@@ -1,4 +1,4 @@
-package br.edu.ifms.aula.estudante;
+package br.edu.ifms.aula.carga_horaria;
 
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
@@ -11,18 +11,15 @@ import org.mapstruct.factory.Mappers;
 @Mapper(
         config = BaseObjectMapper.class
 )
-public interface EstudanteMapper extends ISimpleMapper<Estudante, EstudanteDto, EstudanteForm> {
-
-    public static final EstudanteMapper INSTANCE = Mappers.getMapper(EstudanteMapper.class);
+public interface CargaHorariaMapper extends ISimpleMapper<CargaHoraria, CargaHorariaDto, CargaHorariaForm> {
+    public static final CargaHorariaMapper INSTANCE = Mappers.getMapper(CargaHorariaMapper.class);
 
     @InheritConfiguration(name = "toEntity")
     @Override
-    public Estudante formToEntity(EstudanteForm dto);
+    public CargaHoraria formToEntity(CargaHorariaForm dto);
     
     @InheritConfiguration(name = "update")
     @Mapping(target = "id", ignore = true)
     @Override
-    public Estudante update(EstudanteForm dto, @MappingTarget Estudante entity);
-
-    
+    public CargaHoraria update(CargaHorariaForm dto, @MappingTarget CargaHoraria entity);
 }

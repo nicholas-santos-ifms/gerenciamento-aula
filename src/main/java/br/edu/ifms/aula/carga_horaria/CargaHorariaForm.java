@@ -1,15 +1,19 @@
-package br.edu.ifms.aula.local;
+package br.edu.ifms.aula.carga_horaria;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@Data
 @SuperBuilder
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class LocalForm extends AdapterBaseObjectForm {
+public class CargaHorariaForm extends AdapterBaseObjectForm {
     
+    private Integer duracao;
+    private MedidaTempo medidaTempo;
 }

@@ -1,7 +1,6 @@
-package br.edu.ifms.aula.turma;
+package br.edu.ifms.aula.carga_horaria;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
-import br.edu.ifms.aula.periodo.PeriodoDto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -13,12 +12,8 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
-public class TurmaDto extends AdapterBaseObjectDto {
-
-    private int ano;
-    private String nomeCurso;
-    private String nomeCampus;
+public class CargaHorariaDto extends AdapterBaseObjectDto {
     
-    private PeriodoDto periodo;
-
+    private Integer duracao;
+    private MedidaTempo medidaTempo;
 }

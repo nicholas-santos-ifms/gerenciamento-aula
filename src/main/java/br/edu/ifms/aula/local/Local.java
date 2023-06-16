@@ -1,23 +1,19 @@
 package br.edu.ifms.aula.local;
 
+import br.edu.ifms.arch.BaseObject;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
+@EqualsAndHashCode(callSuper = true)
 @Entity
-public class Local {
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String nome;
+@SequenceGenerator(sequenceName = "local_sequence", name = "baseObjectSequence", allocationSize = 1)
+public class Local extends BaseObject {
+    
 }

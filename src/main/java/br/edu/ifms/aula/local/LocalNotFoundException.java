@@ -1,4 +1,3 @@
-
 package br.edu.ifms.aula.local;
 
 import org.springframework.http.HttpStatus;
@@ -11,4 +10,5 @@ public class LocalNotFoundException extends ResponseStatusException {
     public LocalNotFoundException(String errorMessage) {
         super(HttpStatus.NOT_FOUND, errorMessage);
     }
+    
 }
