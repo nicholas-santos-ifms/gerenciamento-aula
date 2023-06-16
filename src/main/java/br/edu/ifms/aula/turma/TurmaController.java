@@ -30,10 +30,5 @@ public class TurmaController extends AbstractSimpleController
                 .toUri();
     }
 
-    @Override
-    public URI createUri(Turma entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("api/turma/{id}")
-                .buildAndExpand(entity.getId())
-                .toUri();
-    }
+  
 }

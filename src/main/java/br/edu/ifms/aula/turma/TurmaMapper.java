@@ -5,6 +5,7 @@ import br.edu.ifms.arch.ISimpleMapper;
 import br.edu.ifms.aula.curso.CursoMapper;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 

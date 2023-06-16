@@ -4,11 +4,12 @@
  */
 package br.edu.ifms.aula.cargaHoraria;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -17,11 +18,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-public class CargaHorariaDto {
-    private long id;
-    private String nome;
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class CargaHorariaDto extends AdapterBaseObjectDto {
+    
     private int duracao;
     private MedidaTempo medidaTempo;
 }

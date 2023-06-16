@@ -5,46 +5,22 @@
 package br.edu.ifms.aula.cargaHoraria;
 
 
-import java.util.List;
-import java.util.Optional;
+import br.edu.ifms.arch.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author 02709564173
+ * @author 07041626105
  */
 @Service
-public class CargaHorariaService {
-     @Autowired
-    private CargaHorariaRepository repository;
-    
-    public List<CargaHoraria> listar() {
-        return repository.findAll();
-    }
-    
-    public CargaHoraria salvar(CargaHoraria entity) {
-        CargaHoraria p = repository.save(entity);
-        return p;
-    }
-    
-    public CargaHoraria atualizar(Long id, CargaHorariaForm form) {
-        CargaHoraria entity = buscarPorId(id);
-        CargaHorariaMapper.INSTANCE.update(form, entity);
-        return entity;
-    }
-    
-    public CargaHoraria buscarPorId(Long id) {
-        Optional<CargaHoraria> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            String msg = "Não existe CargaHoraria para o código [%d] informado";
-            throw new CargaHorariaNotFoundException(String.format(msg, id));
-        }
-        return optional.get();
-    }
+public class CargaHorariaService 
+        extends AbstractService<CargaHoraria, Long, CargaHorariaForm, CargaHorariaRepository> {
 
-    public void excluir(Long id) {
-        CargaHoraria entity = buscarPorId(id);
-        repository.delete(entity);
-    }
+    @Autowired
+    @Override
+    public void setRepository(CargaHorariaRepository repository) {
+        super.repository = repository;
+        super.setMapper(CargaHorariaMapper.INSTANCE);
+    }   
 }

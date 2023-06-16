@@ -3,13 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/CargaHorarias/Class.java to edit this template
  */
 package br.edu.ifms.aula.cargaHoraria;
-
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
  *
- * @author 02709564173
+ * @author 07041626105
  */
-public interface CargaHorariaRepository  extends JpaRepository<CargaHoraria, Long>{
+public interface CargaHorariaRepository  extends IArchRepository<CargaHoraria, Long>{
     
 }

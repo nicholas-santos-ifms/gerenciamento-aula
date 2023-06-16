@@ -5,28 +5,23 @@
 package br.edu.ifms.aula.cargaHoraria;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import br.edu.ifms.arch.BaseObject;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author 02709564173
  */
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-@Entity
-public class CargaHoraria {
-    @Id
-    @GeneratedValue
-    private long id;
-    private String nome;
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class CargaHoraria extends BaseObject {
     private int duracao;
     private MedidaTempo medidaTempo;
 }

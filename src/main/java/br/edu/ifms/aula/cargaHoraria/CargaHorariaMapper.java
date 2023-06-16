@@ -5,25 +5,34 @@
 package br.edu.ifms.aula.cargaHoraria;
 
 
-import java.util.List;
+import br.edu.ifms.arch.BaseObjectMapper;
+import br.edu.ifms.arch.ISimpleMapper;
+import org.mapstruct.InheritConfiguration;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
  *
- * @author 02709564173
+ * @author 07041626105
  */
-public interface CargaHorariaMapper {
+@Mapper(
+        config = BaseObjectMapper.class
+)
+public interface CargaHorariaMapper extends ISimpleMapper<CargaHoraria, CargaHorariaDto, CargaHorariaForm> {
+
     public static final CargaHorariaMapper INSTANCE = Mappers.getMapper(CargaHorariaMapper.class);
+
+    @InheritConfiguration(name = "toEntity")
+    @Override
+    public CargaHoraria formToEntity(CargaHorariaForm dto);
     
-    public CargaHorariaDto toDto(CargaHoraria entity);
-    
-    public List<CargaHorariaDto>map(List<CargaHoraria>itens);
-    
+    @InheritConfiguration(name = "update")
     @Mapping(target = "id", ignore = true)
-    public void update(CargaHorariaForm dto, @MappingTarget CargaHoraria entity);
+    @Override
+    public CargaHoraria update(CargaHorariaForm dto, @MappingTarget CargaHoraria entity);
+
     
-    @Mapping(target = "id", ignore = true)
-    public CargaHoraria toEntity(CargaHorariaForm form);
 }
+

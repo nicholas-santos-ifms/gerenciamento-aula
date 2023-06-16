@@ -4,24 +4,24 @@
  */
 package br.edu.ifms.aula.cargaHoraria;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author 02709564173
  */
-@Builder
+@SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-public class CargaHorariaForm {
-    private long id;
-    private String nome;
+@EqualsAndHashCode(callSuper = true)
+public class CargaHorariaForm extends AdapterBaseObjectForm {
+    
     private int duracao;
     private MedidaTempo medidaTempo;
 }
