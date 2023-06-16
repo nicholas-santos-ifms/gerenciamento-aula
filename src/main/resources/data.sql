@@ -37,8 +37,8 @@ INSERT INTO periodo (id, nome, tipo_periodo, numero, ano, inicio, fim) VALUES
 
 ALTER SEQUENCE periodo_sequence RESTART WITH 3;
 
-INSERT INTO disciplina (id, nome, carga_horaria, ementa) VALUES
-(1, 'Desenvolvimento para serviços Web 1', 80.0, 'Spring Boot'),
-(2, 'Desenvolvimento para interfaces ricas', 80.0, 'React');
+INSERT INTO disciplina (id, nome, carga_horaria, ementa, curso_id) VALUES
+(1, 'Desenvolvimento para serviços Web 1', 80.0, 'Spring Boot', 2),
+(2, 'Desenvolvimento para interfaces ricas', 80.0, 'React', 2);
 
 ALTER SEQUENCE disciplina_sequence RESTART WITH 3;
