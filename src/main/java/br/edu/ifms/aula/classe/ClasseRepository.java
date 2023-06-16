@@ -1,9 +1,9 @@
 package br.edu.ifms.aula.classe;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClasseRepository extends JpaRepository<Classe, Long> {
+public interface ClasseRepository extends IArchRepository<Classe, ClasseId> {
     
 }

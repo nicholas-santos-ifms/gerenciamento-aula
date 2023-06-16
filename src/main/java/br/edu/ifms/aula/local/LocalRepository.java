@@ -1,10 +1,9 @@
-
 package br.edu.ifms.aula.local;
 
-import br.edu.ifms.aula.Local;
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
+import org.springframework.stereotype.Repository;
 
-
-public interface LocalRepository extends JpaRepository<Local, Long> {
+@Repository
+public interface LocalRepository extends IArchRepository<Local, Long> {
     
 }

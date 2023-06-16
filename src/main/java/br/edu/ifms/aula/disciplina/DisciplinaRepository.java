@@ -1,12 +1,7 @@
-
 package br.edu.ifms.aula.disciplina;
 
-import br.edu.ifms.aula.cargaHoraria.CargaHoraria;
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
 
-
-public interface DisciplinaRepository extends JpaRepository<Disciplina, Long> {
-
-    public Disciplina save(CargaHoraria entity);
+public interface DisciplinaRepository extends IArchRepository<Disciplina, Long> {
     
 }
