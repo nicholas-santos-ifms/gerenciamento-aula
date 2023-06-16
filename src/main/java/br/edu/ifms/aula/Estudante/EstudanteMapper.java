@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package br.edu.ifms.aula.Estudante;
 
 import br.edu.ifms.aula.curso.CursoMapper;
@@ -11,16 +8,15 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-/**
- *
- * @author 07041626105
- */
+
 @Mapper(
-        uses = {CursoMapper.class}
+        config = BaseObjectMapper.class
+     
 )
 
 public interface EstudanteMapper {
     public static final EstudanteMapper INSTANCE = Mappers.getMapper(EstudanteMapper.class);
+    
     
     public EstudanteDto toDto(Estudante entity);
     

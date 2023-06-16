@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-/**
- *
- * @author nicho
- */
 @RestController
 @RequestMapping("/api/campus")
 public class CampusController extends AbstractBasicController<Campus, CampusDto, CampusForm, CampusRepository, CampusService, Long> {

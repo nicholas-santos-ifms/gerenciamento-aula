@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package br.edu.ifms.aula.campus;
 
 import br.edu.ifms.arch.BaseObjectMapper;
@@ -13,10 +10,6 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 
-/**
- *
- * @author nicho
- */
 @Mapper(config = BaseObjectMapper.class)
 public interface CampusMapper extends ISimpleMapper<Campus, CampusDto, CampusForm> {
     

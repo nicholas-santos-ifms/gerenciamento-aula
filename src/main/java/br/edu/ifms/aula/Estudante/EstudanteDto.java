@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode (callSuper = false)
 @Builder
 public class EstudanteDto {
     private Long id;
