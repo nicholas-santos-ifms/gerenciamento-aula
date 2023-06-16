@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package br.edu.ifms.aula.campus;
+package br.edu.ifms.aula.periodo;
 
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
@@ -13,19 +13,22 @@ import org.mapstruct.factory.Mappers;
 
 /**
  *
- * @author nicho
+ * @author 1513003
  */
-@Mapper(config = BaseObjectMapper.class)
-public interface CampusMapper extends ISimpleMapper<Campus, CampusDto, CampusForm> {
+@Mapper(
+        config = BaseObjectMapper.class
+)
+public interface PeriodoMapper extends ISimpleMapper<Periodo, PeriodoDto, PeriodoForm> {
     
-    public static final CampusMapper INSTANCE = Mappers.getMapper(CampusMapper.class);
-    
+    public static final PeriodoMapper INSTANCE = Mappers
+            .getMapper(PeriodoMapper.class);
+
     @InheritConfiguration(name = "toEntity")
     @Override
-    public Campus formToEntity(CampusForm dto);
+    public Periodo formToEntity(PeriodoForm dto);
 
     @InheritConfiguration(name = "update")
     @Override
-    public Campus update(CampusForm dto, @MappingTarget Campus entity);
-
+    public Periodo update(PeriodoForm dto, @MappingTarget Periodo entity);
+    
 }

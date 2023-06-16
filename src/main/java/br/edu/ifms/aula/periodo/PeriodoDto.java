@@ -2,14 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.disciplina;
+package br.edu.ifms.aula.periodo;
 
-import br.edu.ifms.aula.curso.CursoDto;
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -18,13 +19,15 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-public class DisciplinaDto {
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class PeriodoDto extends AdapterBaseObjectDto {
 
     private Long id;
     private String nome;
-    private Double cargaHoraria;
-    private String ementa;
-    private CursoDto curso;
+    private TipoPeriodo tipoPeriodo;
+    private Integer numero;
+    private Integer ano;
+    private LocalDate inicio;
+    private LocalDate fim;
 }

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.disciplina;
+package br.edu.ifms.aula.periodo;
 
 import br.edu.ifms.arch.controller.AbstractSimpleController;
 import java.net.URI;
@@ -16,21 +16,21 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author 1513003
  */
 @RestController
-@RequestMapping("/api/disciplina")
-public class DisciplinaController extends AbstractSimpleController
-        <Disciplina, Long, DisciplinaDto, DisciplinaForm, DisciplinaRepository, DisciplinaService> {
+@RequestMapping("/api/periodo")
+public class PeriodoController extends AbstractSimpleController<Periodo, Long, PeriodoDto, PeriodoForm, PeriodoRepository, PeriodoService> {
 
     @Autowired
     @Override
-    public void setService(DisciplinaService service) {
+    public void setService(PeriodoService service) {
         super.service = service;
-        super.setMapper(DisciplinaMapper.INSTANCE);
+        super.setMapper(PeriodoMapper.INSTANCE);
     }
 
     @Override
-    public URI createUri(Disciplina entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/api/disciplina/{id}")
+    public URI createUri(Periodo entity, UriComponentsBuilder uriBuilder) {
+        return uriBuilder.path("/api/periodo/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }
+
 }
