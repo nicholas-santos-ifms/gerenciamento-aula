@@ -4,12 +4,12 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
  *
  * @author 1513003
  */
-public interface DisciplinaRepository extends JpaRepository<Disciplina, Long> {
+public interface DisciplinaRepository extends IArchRepository<Disciplina, Long> {
     
 }

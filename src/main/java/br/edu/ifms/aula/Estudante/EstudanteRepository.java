@@ -4,12 +4,12 @@
  */
 package br.edu.ifms.aula.Estudante;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
  *
  * @author 07041626105
  */
-public interface EstudanteRepository  extends IArch<Estudante, Long>{
+public interface EstudanteRepository  extends IArchRepository<Estudante, Long>{
     
 }

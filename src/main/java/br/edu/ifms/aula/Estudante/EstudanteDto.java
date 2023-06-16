@@ -5,9 +5,7 @@
 package br.edu.ifms.aula.Estudante;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
-import br.edu.ifms.aula.turma.TurmaDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
-public class EstudanteDto extends AdapterBaseObjectDto{
+public class EstudanteDto extends AdapterBaseObjectDto {
     
     private String ra;
     private String cpf;

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.Local;
+package br.edu.ifms.aula.carga_horaria;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -10,14 +10,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 /**
  *
- * @author 07041626105
+ * @author 1513003
  */
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Local não encontrado")
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Carga Horária não encontrado")
+public class CargaHorariaNotFoundException extends ResponseStatusException {
 
-public class LocalNotFoundException extends ResponseStatusException {
-
-    public LocalNotFoundException(String errorMessage) {
-    super(HttpStatus.NOT_FOUND, errorMessage);
+    public CargaHorariaNotFoundException(String errorMessage) {
+        super(HttpStatus.NOT_FOUND, errorMessage);
     }
     
 }

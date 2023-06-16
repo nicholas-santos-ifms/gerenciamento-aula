@@ -2,31 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.Horario;
+package br.edu.ifms.aula.carga_horaria;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author 07041626105
+ * @author 1513003
  */
 @Data
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-@Entity
-public class Horario {
-    @Id
-    @GeneratedValue
-    private int diaDaSemana;
-    private String horaInicio;
-    private String horaFim;
+@EqualsAndHashCode(callSuper = true)
+public class CargaHorariaForm extends AdapterBaseObjectForm {
+
+    private Integer duracao;
+
+    private MedidaTempo medidaTempo;
 }
