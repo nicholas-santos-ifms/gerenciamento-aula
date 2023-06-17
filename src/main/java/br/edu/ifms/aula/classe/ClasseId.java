@@ -8,6 +8,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.*;
 
+import java.io.Serializable;
+
 /**
  * @author 1513003
  */
@@ -17,7 +19,7 @@ import lombok.*;
 @EqualsAndHashCode
 @Builder
 @Embeddable
-public class ClasseId {
+public class ClasseId implements Serializable {
 
     @Column(name = "disciplina_id")
     private Long disciplinaId;

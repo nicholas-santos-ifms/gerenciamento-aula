@@ -8,6 +8,8 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
+import java.io.Serializable;
+
 /**
  * @author 1513003
  */
@@ -17,7 +19,7 @@ import lombok.*;
 @EqualsAndHashCode
 @Builder
 @Embeddable
-public class HorarioId {
+public class HorarioId implements Serializable {
 
     private int sequencia;
 
