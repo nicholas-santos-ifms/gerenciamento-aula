@@ -16,7 +16,7 @@ import java.net.URI;
  * @author nicho
  */
 @RestController
-@RequestMapping("/api/local")
+@RequestMapping("/api/cargahoraria")
 public class CargaHorariaController extends AbstractBasicController<CargaHoraria, CargaHorariaDto, CargaHorariaForm, CargaHorariaRepository, CargaHorariaService, Long> {
 
     @Autowired
@@ -28,7 +28,7 @@ public class CargaHorariaController extends AbstractBasicController<CargaHoraria
 
     @Override
     public URI createUri(CargaHoraria entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/local/{id}")
+        return uriBuilder.path("/cargahoraria/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }
