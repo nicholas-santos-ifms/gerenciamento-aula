@@ -15,9 +15,14 @@ ALTER SEQUENCE professor_seq RESTART WITH 3;
 
 INSERT INTO campus (id, nome, created_at) VALUES
 (1, 'Campus Naviraí', now()),
-(2, 'Reitoria', now());
+(2, 'Campus Dourados', now()),
+(3, 'Campus Campo Grande', now()),
+(4, 'Campus Jardim', now()),
+(5, 'Campus Corumbá', now()),
+(6, 'Campus Nova Andradina', now()),
+(7, 'Campus Coxim', now());
 
-ALTER SEQUENCE campus_sequence RESTART WITH 3;
+ALTER SEQUENCE campus_sequence RESTART WITH 8;
 
 INSERT INTO curso (id, nome, created_at, campus_id) VALUES
 (1, 'Agronomia', now(), 1),
