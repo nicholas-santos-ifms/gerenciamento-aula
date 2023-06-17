@@ -8,6 +8,7 @@ import br.edu.ifms.aula.disciplina.DisciplinaDto;
 import br.edu.ifms.aula.periodo.PeriodoDto;
 import br.edu.ifms.aula.turma.TurmaDto;
 import java.time.LocalDate;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -36,4 +37,6 @@ public class ClasseDto {
     private PeriodoDto periodo;
     
     private TurmaDto turma;
+    
+    private List<HorarioDto> horarios;
 }

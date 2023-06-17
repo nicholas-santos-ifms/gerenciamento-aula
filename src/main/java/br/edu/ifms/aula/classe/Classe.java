@@ -7,9 +7,11 @@ package br.edu.ifms.aula.classe;
 import br.edu.ifms.aula.disciplina.Disciplina;
 import br.edu.ifms.aula.periodo.Periodo;
 import br.edu.ifms.aula.turma.Turma;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -64,6 +66,9 @@ public class Classe implements Serializable {
     @Column(nullable = false)
     private LocalDate inicio;
     
-    @OneToMany(mappedBy = "id.classe")
+    @OneToMany(mappedBy = "id.classe",
+            fetch = FetchType.LAZY,
+            cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST },
+            orphanRemoval = true)
     private List<Horario> horarios;
 }

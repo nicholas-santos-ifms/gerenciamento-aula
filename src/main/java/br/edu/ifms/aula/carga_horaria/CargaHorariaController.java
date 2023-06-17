@@ -16,7 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author nicho
  */
 @RestController
-@RequestMapping("/api/local")
+@RequestMapping("/api/carga-horaria")
 public class CargaHorariaController extends AbstractBasicController<CargaHoraria, CargaHorariaDto, CargaHorariaForm, CargaHorariaRepository, CargaHorariaService, Long> {
 
     @Autowired
@@ -28,7 +28,7 @@ public class CargaHorariaController extends AbstractBasicController<CargaHoraria
 
     @Override
     public URI createUri(CargaHoraria entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/local/{id}")
+        return uriBuilder.path("/carga-horaria/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }
