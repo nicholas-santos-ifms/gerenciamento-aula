@@ -4,11 +4,9 @@
  */
 package br.edu.ifms.aula.classe;
 
-import br.edu.ifms.aula.disciplina.DisciplinaDto;
-import br.edu.ifms.aula.periodo.PeriodoDto;
-import br.edu.ifms.aula.turma.TurmaDto;
-import java.time.LocalDate;
-import java.util.List;
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,19 +22,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
-public class ClasseForm {
-
-    private Integer vagas;
-
-    private Integer numeroAulas;
-
-    private LocalDate inicio;
+@Entity
+public class Horario {
     
-    private DisciplinaDto disciplina;
+    @EmbeddedId
+    private HorarioId id;
     
-    private PeriodoDto periodo;
+    @Column(nullable = false)
+    private int diaDaSemana;
     
-    private TurmaDto turma;
+    @Column(nullable = false)
+    private String horaInicio;
     
-    private List<HorarioDto> horarios;
+    @Column(nullable = false)
+    private String horaFim;
 }

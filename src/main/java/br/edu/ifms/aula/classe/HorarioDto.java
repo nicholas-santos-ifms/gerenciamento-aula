@@ -4,11 +4,6 @@
  */
 package br.edu.ifms.aula.classe;
 
-import br.edu.ifms.aula.disciplina.DisciplinaDto;
-import br.edu.ifms.aula.periodo.PeriodoDto;
-import br.edu.ifms.aula.turma.TurmaDto;
-import java.time.LocalDate;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -24,19 +19,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
-public class ClasseDto {
+public class HorarioDto {
 
-    private Integer vagas;
-
-    private Integer numeroAulas;
-
-    private LocalDate inicio;
-    
-    private DisciplinaDto disciplina;
-    
-    private PeriodoDto periodo;
-    
-    private TurmaDto turma;
-    
-    private List<HorarioDto> horarios;
+    private int sequencia;
+    private ClasseDto classe;
+    private int diaDaSemana;
+    private String horaInicio;
+    private String horaFim;
 }
