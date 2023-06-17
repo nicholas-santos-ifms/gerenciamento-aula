@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping("/api/cargaHoraria")
+@RequestMapping("/api/carga-horaria")
 public class CargaHorariaController extends AbstractSimpleController<CargaHoraria, Long, CargaHorariaDto, CargaHorariaForm, CargaHorariaRepository, CargaHorariaService> {
 
     @Autowired
@@ -20,7 +20,7 @@ public class CargaHorariaController extends AbstractSimpleController<CargaHorari
 
     @Override
     public URI createUri(CargaHoraria entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/api/cargaHoraria/{id}")
+        return uriBuilder.path("/api/carga-horaria/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }
