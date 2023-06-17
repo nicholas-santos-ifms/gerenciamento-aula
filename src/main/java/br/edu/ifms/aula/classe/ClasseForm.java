@@ -7,11 +7,16 @@ package br.edu.ifms.aula.classe;
 import br.edu.ifms.aula.disciplina.DisciplinaDto;
 import br.edu.ifms.aula.periodo.PeriodoDto;
 import br.edu.ifms.aula.turma.TurmaDto;
-import lombok.*;
-
 import java.time.LocalDate;
+import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
+ *
  * @author 1513003
  */
 @Data
@@ -26,10 +31,12 @@ public class ClasseForm {
     private Integer numeroAulas;
 
     private LocalDate inicio;
-
+    
     private DisciplinaDto disciplina;
-
+    
     private PeriodoDto periodo;
-
+    
     private TurmaDto turma;
+    
+    private List<HorarioDto> horarios;
 }
