@@ -8,10 +8,9 @@ import br.edu.ifms.arch.repository.IArchRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- *
  * @author 1513003
  */
 @Repository
 public interface ClasseRepository extends IArchRepository<Classe, ClasseId> {
-    
+
 }

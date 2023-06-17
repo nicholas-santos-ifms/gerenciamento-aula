@@ -5,16 +5,16 @@
 package br.edu.ifms.aula.classe;
 
 import br.edu.ifms.arch.controller.AbstractSimpleController;
-import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- *
  * @author 1513003
  */
 @RestController
@@ -40,6 +40,6 @@ public class ClasseController extends AbstractSimpleController
                 .buildAndExpand(map)
                 .toUri();
     }
-    
-    
+
+
 }

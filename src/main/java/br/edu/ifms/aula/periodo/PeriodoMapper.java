@@ -12,14 +12,13 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
- *
  * @author 1513003
  */
 @Mapper(
         config = BaseObjectMapper.class
 )
 public interface PeriodoMapper extends ISimpleMapper<Periodo, PeriodoDto, PeriodoForm> {
-    
+
     public static final PeriodoMapper INSTANCE = Mappers
             .getMapper(PeriodoMapper.class);
 
@@ -30,5 +29,5 @@ public interface PeriodoMapper extends ISimpleMapper<Periodo, PeriodoDto, Period
     @InheritConfiguration(name = "update")
     @Override
     public Periodo update(PeriodoForm dto, @MappingTarget Periodo entity);
-    
+
 }

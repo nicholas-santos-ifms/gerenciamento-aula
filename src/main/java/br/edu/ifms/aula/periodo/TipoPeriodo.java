@@ -5,7 +5,6 @@
 package br.edu.ifms.aula.periodo;
 
 /**
- *
  * @author 1513003
  */
 public enum TipoPeriodo {

@@ -12,14 +12,13 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
- *
  * @author 1513003
  */
 @Mapper(
         uses = {CursoMapper.class}
 )
 public interface DisciplinaMapper extends ISimpleMapper<Disciplina, DisciplinaDto, DisciplinaForm> {
-    
+
     public static final DisciplinaMapper INSTANCE = Mappers
             .getMapper(DisciplinaMapper.class);
 
@@ -30,5 +29,5 @@ public interface DisciplinaMapper extends ISimpleMapper<Disciplina, DisciplinaDt
     @Mapping(target = "id", ignore = true)
     @Override
     public Disciplina update(DisciplinaForm dto, @MappingTarget Disciplina entity);
-    
+
 }

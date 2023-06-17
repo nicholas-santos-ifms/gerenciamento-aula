@@ -19,7 +19,7 @@ public class TurmaForm extends AdapterBaseObjectForm {
 
     @Min(1)
     private int ano;
-    
+
     @NotNull
     private CursoDto curso;
 

@@ -7,9 +7,8 @@ package br.edu.ifms.aula.disciplina;
 import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
- *
  * @author 1513003
  */
 public interface DisciplinaRepository extends IArchRepository<Disciplina, Long> {
-    
+
 }

@@ -13,7 +13,6 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
- *
  * @author 07041626105
  */
 @Mapper(
@@ -26,11 +25,11 @@ public interface EstudanteMapper extends ISimpleMapper<Estudante, EstudanteDto, 
     @InheritConfiguration(name = "toEntity")
     @Override
     public Estudante formToEntity(EstudanteForm dto);
-    
+
     @InheritConfiguration(name = "update")
     @Mapping(target = "id", ignore = true)
     @Override
     public Estudante update(EstudanteForm dto, @MappingTarget Estudante entity);
 
-    
+
 }

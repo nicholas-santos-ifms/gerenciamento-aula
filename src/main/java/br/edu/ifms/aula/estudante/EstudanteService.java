@@ -9,11 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- *
  * @author 07041626105
  */
 @Service
-public class EstudanteService 
+public class EstudanteService
         extends AbstractService<Estudante, Long, EstudanteForm, EstudanteRepository> {
 
     @Autowired
@@ -22,6 +21,6 @@ public class EstudanteService
         super.repository = repository;
         super.setMapper(EstudanteMapper.INSTANCE);
     }
-    
-    
+
+
 }

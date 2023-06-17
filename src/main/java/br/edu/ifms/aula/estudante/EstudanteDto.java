@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
- *
  * @author 07041626105
  */
 @Getter
@@ -21,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
 public class EstudanteDto extends AdapterBaseObjectDto {
-    
+
     private String ra;
     private String cpf;
     private String situacao;

@@ -7,9 +7,8 @@ package br.edu.ifms.aula.periodo;
 import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
- *
  * @author 1513003
  */
 public interface PeriodoRepository extends IArchRepository<Periodo, Long> {
-    
+
 }

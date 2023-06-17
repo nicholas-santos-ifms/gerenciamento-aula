@@ -5,18 +5,13 @@
 package br.edu.ifms.aula.cargahoraria;
 
 import br.edu.ifms.arch.BaseObject;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
- *
  * @author 1513003
  */
 @Data
@@ -26,10 +21,10 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SequenceGenerator(sequenceName = "carga_horaria_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class CargaHoraria extends BaseObject {
-    
+
     @Column(nullable = false)
     private Integer duracao;
-    
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private MedidaTempo medidaTempo;

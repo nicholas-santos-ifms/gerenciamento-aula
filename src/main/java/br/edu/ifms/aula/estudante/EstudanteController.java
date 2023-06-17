@@ -6,20 +6,20 @@ package br.edu.ifms.aula.estudante;
 
 
 import br.edu.ifms.arch.controller.AbstractSimpleController;
-import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
+
 /**
- *
  * @author 07041626105
  */
 @RestController
 @RequestMapping("/api/estudante")
-public class EstudanteController 
-        extends AbstractSimpleController<Estudante, Long, EstudanteDto, EstudanteForm, EstudanteRepository, EstudanteService>  {
+public class EstudanteController
+        extends AbstractSimpleController<Estudante, Long, EstudanteDto, EstudanteForm, EstudanteRepository, EstudanteService> {
 
     @Autowired
     @Override

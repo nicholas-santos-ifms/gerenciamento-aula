@@ -15,5 +15,5 @@ public class TurmaService extends AbstractService
         super.setMapper(TurmaMapper.INSTANCE);
     }
 
-    
+
 }

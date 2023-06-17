@@ -23,7 +23,7 @@ public class Turma extends BaseObject {
 
     @Column(columnDefinition = "integer not null")
     private int ano;
-    
+
     @ManyToOne
     private Curso curso;
 }

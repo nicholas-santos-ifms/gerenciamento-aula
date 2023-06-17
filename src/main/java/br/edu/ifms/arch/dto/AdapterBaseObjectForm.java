@@ -15,7 +15,6 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.validator.constraints.Length;
 
 /**
- *
  * @author santos
  */
 @Data
@@ -23,14 +22,14 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class AdapterBaseObjectForm implements IBaseForm  {
+public class AdapterBaseObjectForm implements IBaseForm {
 
     @NotNull(message = "O nome não deve ser nulo")
     @NotEmpty(message = "O nome não deve ser vazio")
     @NotBlank(message = "O Nome não deve conter espa�os em branco.")
     @Length(min = 3, message = "O Nome deve conter ao menos 3 caracteres.")
     protected String nome;
-    
+
     @Override
     public String getNome() {
         return nome;

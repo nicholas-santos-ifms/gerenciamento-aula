@@ -15,28 +15,27 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
- *
  * @author 1513003
  */
 @Mapper(
         config = BaseObjectMapper.class,
-        uses = { DisciplinaMapper.class, PeriodoMapper.class,
-                 TurmaMapper.class }
+        uses = {DisciplinaMapper.class, PeriodoMapper.class,
+                TurmaMapper.class}
 )
 public interface ClasseMapper extends ISimpleMapper<Classe, ClasseDto, ClasseForm> {
-    
+
     public static final ClasseMapper INSTANCE = Mappers
             .getMapper(ClasseMapper.class);
 
     @Mapping(target = "id", expression = """
-                                         java(
-                                            ClasseId.builder()
-                                                    .disciplinaId(dto.getDisciplina().getId())
-                                                    .periodoId(dto.getPeriodo().getId())
-                                                    .turmaId(dto.getTurma().getId())
-                                                    .build()
-                                         )
-                                         """)
+            java(
+               ClasseId.builder()
+                       .disciplinaId(dto.getDisciplina().getId())
+                       .periodoId(dto.getPeriodo().getId())
+                       .turmaId(dto.getTurma().getId())
+                       .build()
+            )
+            """)
     @Override
     public Classe formToEntity(ClasseForm dto);
 
@@ -47,6 +46,6 @@ public interface ClasseMapper extends ISimpleMapper<Classe, ClasseDto, ClasseFor
     @Mapping(target = "id", ignore = true)
     @Override
     public Classe update(ClasseForm dto, @MappingTarget Classe entity);
-    
-    
+
+
 }

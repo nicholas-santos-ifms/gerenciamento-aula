@@ -7,9 +7,8 @@ package br.edu.ifms.aula.estudante;
 import br.edu.ifms.arch.repository.IArchRepository;
 
 /**
- *
  * @author 07041626105
  */
-public interface EstudanteRepository  extends IArchRepository<Estudante, Long>{
-    
+public interface EstudanteRepository extends IArchRepository<Estudante, Long> {
+
 }

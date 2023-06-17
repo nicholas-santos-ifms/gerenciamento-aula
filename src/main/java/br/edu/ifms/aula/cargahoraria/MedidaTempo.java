@@ -5,7 +5,6 @@
 package br.edu.ifms.aula.cargahoraria;
 
 /**
- *
  * @author 1513003
  */
 public enum MedidaTempo {

@@ -11,7 +11,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(
         config = BaseObjectMapper.class,
-        uses = { CursoMapper.class }
+        uses = {CursoMapper.class}
 )
 public interface TurmaMapper extends ISimpleMapper<Turma, TurmaDto, TurmaForm> {
 

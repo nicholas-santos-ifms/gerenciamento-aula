@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
- *
  * @author 1513003
  */
 @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Carga Horária não encontrado")
@@ -18,5 +17,5 @@ public class CargaHorariaNotFoundException extends ResponseStatusException {
     public CargaHorariaNotFoundException(String errorMessage) {
         super(HttpStatus.NOT_FOUND, errorMessage);
     }
-    
+
 }

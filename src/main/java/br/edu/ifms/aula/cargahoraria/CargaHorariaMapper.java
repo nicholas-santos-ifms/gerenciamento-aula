@@ -6,15 +6,15 @@ package br.edu.ifms.aula.cargahoraria;
 
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
-import java.util.List;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 /**
- *
  * @author nicho
  */
 @Mapper(

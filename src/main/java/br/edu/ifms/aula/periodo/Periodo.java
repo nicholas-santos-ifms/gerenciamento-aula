@@ -5,20 +5,16 @@
 package br.edu.ifms.aula.periodo;
 
 import br.edu.ifms.arch.BaseObject;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.SequenceGenerator;
-import java.time.LocalDate;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDate;
+
 /**
- *
  * @author 1513003
  */
 @Data
@@ -29,20 +25,20 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SequenceGenerator(sequenceName = "periodo_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Periodo extends BaseObject {
-    
+
     @Column(columnDefinition = "varchar(255) not null")
     @Enumerated(EnumType.STRING)
     private TipoPeriodo tipoPeriodo;
-    
+
     @Column(columnDefinition = "int not null")
     private Integer numero;
-    
+
     @Column(columnDefinition = "int not null")
     private Integer ano;
-    
+
     @Column(nullable = false)
     private LocalDate inicio;
-    
+
     @Column(nullable = false)
     private LocalDate fim;
 }

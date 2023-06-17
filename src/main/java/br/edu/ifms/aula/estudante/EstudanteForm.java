@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
- *
  * @author 07041626105
  */
 @SuperBuilder
@@ -21,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class EstudanteForm extends AdapterBaseObjectForm {
-    
+
     private String ra;
     private String cpf;
     private String situacao;

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TurmaRepository extends IArchRepository<Turma, Long> {
-	
+
 
 }

@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
- *
  * @author 1513003
  */
 @Data
@@ -23,5 +22,5 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SequenceGenerator(sequenceName = "local_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Local extends BaseObject {
-    
+
 }

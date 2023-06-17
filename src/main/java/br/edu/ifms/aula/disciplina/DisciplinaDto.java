@@ -5,14 +5,9 @@
 package br.edu.ifms.aula.disciplina;
 
 import br.edu.ifms.aula.curso.CursoDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
- *
  * @author 1513003
  */
 @Getter

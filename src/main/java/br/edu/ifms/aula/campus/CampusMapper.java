@@ -12,14 +12,13 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
- *
  * @author nicho
  */
 @Mapper(config = BaseObjectMapper.class)
 public interface CampusMapper extends ISimpleMapper<Campus, CampusDto, CampusForm> {
-    
+
     public static final CampusMapper INSTANCE = Mappers.getMapper(CampusMapper.class);
-    
+
     @InheritConfiguration(name = "toEntity")
     @Override
     public Campus formToEntity(CampusForm dto);

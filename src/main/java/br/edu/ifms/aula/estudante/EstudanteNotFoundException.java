@@ -9,15 +9,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
- *
  * @author 07041626105
  */
 @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "estudante não encontrada")
 
 public class EstudanteNotFoundException extends ResponseStatusException {
 
-      public EstudanteNotFoundException(String errorMessage){
+    public EstudanteNotFoundException(String errorMessage) {
         super(HttpStatus.NOT_FOUND, errorMessage);
     }
-    
+
 }
