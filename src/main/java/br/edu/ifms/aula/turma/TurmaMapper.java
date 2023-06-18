@@ -1,25 +1,40 @@
 package br.edu.ifms.aula.turma;
 
-import java.util.List;
+import br.edu.ifms.arch.BaseObjectMapper;
+import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.aula.curso.CursoMapper;
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
+<<<<<<< HEAD
+=======
+@Mapper(
+        config = BaseObjectMapper.class,
+        uses = { CursoMapper.class }
+)
+public interface TurmaMapper extends ISimpleMapper<Turma, TurmaDto, TurmaForm> {
+>>>>>>> 0fd01f349779d75c94826407415d1a2b3cd97a1d
 
+    public static final TurmaMapper INSTANCE = Mappers.getMapper(TurmaMapper.class);
 
-@Mapper
-public interface TurmaMapper {
+    @InheritConfiguration(name = "toEntity")
+    @Override
+    public Turma formToEntity(TurmaForm dto);
 
-public static final TurmaMapper INSTANCE = Mappers.getMapper(TurmaMapper.class);
-    
+    @InheritConfiguration(name = "update")
+    @Override
+    public Turma update(TurmaForm dto, @MappingTarget Turma entity);
+
+    @Mapping(target = "curso", ignore = true)
+    @Override
+    public Turma dtoToEntity(TurmaDto dto);
+
+    @Mapping(target = "nomeCurso", source = "entity.curso.nome")
+    @Mapping(target = "nomeCampus", source = "entity.curso.campus.nome")
+    @Override
     public TurmaDto toDto(Turma entity);
-    
-    public List<TurmaDto> map(List<Turma> items);
 
-    @Mapping(target = "id", ignore = true)
-    public void update(TurmaForm dto, @MappingTarget Turma entity);
-
-    @Mapping(target = "id", ignore = true)
-    public Turma toEntity(TurmaForm form);
 }

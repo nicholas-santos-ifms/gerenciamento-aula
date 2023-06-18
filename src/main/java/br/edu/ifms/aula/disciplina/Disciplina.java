@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Disciplina {
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "disciplina_sequence")
     private Long id;
     private String nome;
     private Double cargaHoraria;
