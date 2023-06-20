@@ -2,11 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.local;
-
+package br.edu.ifms.aula.carga_horaria;
 
 import br.edu.ifms.arch.BaseObject;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,7 +24,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@SequenceGenerator(sequenceName = "local_sequence", name = "baseObjectSequence", allocationSize = 1)
-public class Local extends BaseObject {
+@SequenceGenerator(sequenceName = "carga_horaria_sequence", name = "baseObjectSequence", allocationSize = 1)
+public class CargaHoraria extends BaseObject {
     
+    @Column(nullable = false)
+    private Integer duracao;
+    
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private MedidaTempo medidaTempo;
 }

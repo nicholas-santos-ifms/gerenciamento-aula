@@ -2,26 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.curso;
+package br.edu.ifms.aula.classe;
 
-import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  *
- * @author 07041626105
+ * @author 1513003
  */
-@SuperBuilder
-@Data
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class CursoForm extends AdapterBaseObjectForm {
-    
-	  private String sigla;
+@NoArgsConstructor
+@EqualsAndHashCode
+@Builder
+public class HorarioDto {
+
+    private int sequencia;
+    private ClasseDto classe;
+    private int diaDaSemana;
+    private String horaInicio;
+    private String horaFim;
 }

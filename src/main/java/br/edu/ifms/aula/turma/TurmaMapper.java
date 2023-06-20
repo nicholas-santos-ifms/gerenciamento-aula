@@ -39,10 +39,10 @@ public interface TurmaMapper extends ISimpleMapper<Turma, TurmaDto, TurmaForm> {
     @Override
     public Turma dtoToEntity(TurmaDto dto);
 
-     @Mapping(target = "nomeCurso", source = "entity.curso.nome")
-     @Mapping(target = "nomeCampus", source = "entity.curso.campus.nome")
-    @Override
-    public Turma dtoToEntity(TurmaDto dto);
+//     @Mapping(target = "nomeCurso", source = "entity.curso.nome")
+//     @Mapping(target = "nomeCampus", source = "entity.curso.campus.nome")
+//    @Override
+//    public Turma dtoToEntity(TurmaDto dto);
 
     
    

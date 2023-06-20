@@ -2,22 +2,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.local;
+package br.edu.ifms.aula.classe;
 
-import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author 1513003
  */
 @Data
-@SuperBuilder
+@AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class LocalForm extends AdapterBaseObjectForm {
+@EqualsAndHashCode
+@Builder
+@Embeddable
+public class HorarioId {
+    
+    private int sequencia;
+    
+    @ManyToOne
+    private Classe classe;
     
 }
