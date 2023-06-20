@@ -4,12 +4,10 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import br.edu.ifms.arch.repository.IArchRepository;
-
 /**
  *
- * @author 1513003
+ * @author usuario
  */
-public interface DisciplinaRepository extends IArchRepository<Disciplina, Long> {
+public class DisciplinaRepository {
     
 }
