@@ -5,11 +5,13 @@
 package br.edu.ifms.aula.Estudante;
 
 import br.edu.ifms.arch.repository.IArchRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author 07041626105
  */
+@Repository
 public interface EstudanteRepository  extends IArchRepository<Estudante, Long>{
     
 }
