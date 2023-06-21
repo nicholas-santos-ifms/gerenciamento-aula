@@ -3,71 +3,64 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package br.edu.ifms.aula.classe;
-import br.edu.ifms.aula.disciplina.Disciplina;
-import br.edu.ifms.aula.periodo.Periodo;
-import br.edu.ifms.aula.turma.Turma;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import java.io.Serializable;
-import java.time.LocalDate;
+
+import br.edu.ifms.arch.BaseObjectMapper;
+import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.aula.disciplina.DisciplinaMapper;
+import br.edu.ifms.aula.periodo.PeriodoMapper;
+import br.edu.ifms.aula.turma.TurmaMapper;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.factory.Mappers;
 
 /**
  *
  * @author 1513003
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-@Entity
-public class Classe implements Serializable {
+@Mapper(
+        config = BaseObjectMapper.class,
+        uses = { DisciplinaMapper.class, PeriodoMapper.class,
+                 TurmaMapper.class }
+)
+public interface ClasseMapper extends ISimpleMapper<Classe, ClasseDto, ClasseForm> {
+    
+    public static final ClasseMapper INSTANCE = Mappers
+            .getMapper(ClasseMapper.class);
 
-    @EmbeddedId
-    private ClasseId id;
+    @Mapping(target = "id", expression = """
+                                         java(
+                                            ClasseId.builder()
+                                                    .disciplinaId(dto.getDisciplina().getId())
+                                                    .periodoId(dto.getPeriodo().getId())
+                                                    .turmaId(dto.getTurma().getId())
+                                                    .build()
+                                         )
+                                         """)
+    @Override
+    public Classe formToEntity(ClasseForm dto);
+
+    @Mapping(target = "id", ignore = true)
+    @Override
+    public Classe dtoToEntity(ClasseDto dto);
+
+    @Mapping(target = "id", ignore = true)
+    @Override
+    public Classe update(ClasseForm dto, @MappingTarget Classe entity);
     
-    @ManyToOne
-    @JoinColumn(name = "disciplina_id",
-            insertable = false,
-            updatable = false)
-    private Disciplina disciplina;
+    /* Operações criadas para mapear a classe Horario */
     
-    @ManyToOne
-    @JoinColumn(name = "periodo_id",
-            insertable = false,
-            updatable = false)
-    private Periodo periodo;
+    @Override
+    public ClasseDto toDto(Classe entity);
     
-    @ManyToOne
-    @JoinColumn(name = "turma_id",
-            insertable = false,
-            updatable = false)
-    private Turma turma;
+    @Mapping(target = "id.sequencia", source = "sequencia")
+    @Mapping(target = "id.classe", source = "classe")
+    public Horario horarioDtoToEntity(HorarioDto dto);
+
+    @Mapping(target = "sequencia", source = "id.sequencia")
+    @Mapping(target = "classe", source = "id.classe")
+    public HorarioDto horarioEntityToDto(Horario entity);
     
-    @Column(nullable = false)
-    private Integer vagas;
-    
-    @Column(nullable = false)
-    private Integer numeroAulas;
-    
-    @Column(nullable = false)
-    private LocalDate inicio;
-    
-    @OneToMany(mappedBy = "id.classe",
-            fetch = FetchType.LAZY,
-            cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST },
-            orphanRemoval = true)
-    private List<Horario> horarios;
+    public List<HorarioDto> toHorarioDtoList(List<Horario> items);
 }
