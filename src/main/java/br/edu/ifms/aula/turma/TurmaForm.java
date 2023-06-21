@@ -1,9 +1,7 @@
 package br.edu.ifms.aula.turma;
 
 import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
-import br.edu.ifms.aula.curso.CursoDto;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,8 +17,5 @@ public class TurmaForm extends AdapterBaseObjectForm {
 
     @Min(1)
     private int ano;
-    
-    @NotNull
-    private CursoDto curso;
 
 }
