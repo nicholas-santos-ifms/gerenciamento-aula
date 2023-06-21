@@ -116,7 +116,7 @@ public abstract class AbstractSimpleController<
     @DeleteMapping("/{id}")
     @Transactional
     @Override
-    public ResponseEntity<?> remover(K id) {
+    public ResponseEntity<?> remover(@PathVariable K id) {
         service.remover(id);
         return ResponseEntity.ok().build();
     }
