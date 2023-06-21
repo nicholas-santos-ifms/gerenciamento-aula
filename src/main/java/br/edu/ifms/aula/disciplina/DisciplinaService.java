@@ -4,44 +4,22 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import java.util.List;
-import java.util.Optional;
+import br.edu.ifms.arch.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+/**
+ *
+ * @author 1513003
+ */
 @Service
-public class DisciplinaService {
-    
-    @Autowired
-    private DisciplinaRepository repository;
-    
-    public List<Disciplina> listar() {
-        return repository.findAll();
-    }
-    
-    public Disciplina salvar(Disciplina entity) {
-        Disciplina p = repository.save(entity);
-        return p;
-    }
-    
-    public Disciplina atualizar(Long id, DisciplinaForm form) {
-        Disciplina entity = buscarPorId(id);
-        DisciplinaMapper.INSTANCE.update(form, entity);
-        return entity;
-    }
-    
-    public Disciplina buscarPorId(Long id) {
-        Optional<Disciplina> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            String msg = "Não existe a Disciplina para o código [%d] informado";
-            throw new DisciplinaNotFoundException(String.format(msg, id));
-        }
-        return optional.get();
-    }
+public class DisciplinaService extends AbstractService
+        <Disciplina, Long, DisciplinaForm, DisciplinaRepository> {
 
-    public void excluir(Long id) {
-        Disciplina entity = buscarPorId(id);
-        repository.delete(entity);
+    @Autowired
+    @Override
+    public void setRepository(DisciplinaRepository repository) {
+        super.repository = repository;
+        super.setMapper(DisciplinaMapper.INSTANCE);
     }
 }

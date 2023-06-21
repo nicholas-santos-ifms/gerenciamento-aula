@@ -8,7 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.ResponseStatusException;
 
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Disciplina n�o encontrado")
+/**
+ *
+ * @author 1513003
+ */
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Disciplina não encontrado")
 public class DisciplinaNotFoundException extends ResponseStatusException {
 
     public DisciplinaNotFoundException(String errorMessage) {
@@ -16,4 +20,3 @@ public class DisciplinaNotFoundException extends ResponseStatusException {
     }
     
 }
-

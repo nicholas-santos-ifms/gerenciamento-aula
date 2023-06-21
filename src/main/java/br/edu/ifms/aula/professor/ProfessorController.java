@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/professor")
 public class ProfessorController {
 
-    @Autowired // faz o Spring criar uma inst‚ncia de ProfessorService
+    @Autowired // faz o Spring criar uma inst√¢ncia de ProfessorService
     private ProfessorService service;
     
     @GetMapping

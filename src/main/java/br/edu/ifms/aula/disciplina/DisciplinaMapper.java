@@ -4,25 +4,31 @@
  */
 package br.edu.ifms.aula.disciplina;
 
-import java.util.List;
+import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.aula.curso.CursoMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-
-@Mapper
-public interface DisciplinaMapper {
+/**
+ *
+ * @author 1513003
+ */
+@Mapper(
+        uses = {CursoMapper.class}
+)
+public interface DisciplinaMapper extends ISimpleMapper<Disciplina, DisciplinaDto, DisciplinaForm> {
     
-    public static final DisciplinaMapper INSTANCE = Mappers.getMapper(DisciplinaMapper.class);
-    
-    public DisciplinaDto toDto(Disciplina entity);
-    
-    public List<DisciplinaDto> map(List<Disciplina> items);
+    public static final DisciplinaMapper INSTANCE = Mappers
+            .getMapper(DisciplinaMapper.class);
 
     @Mapping(target = "id", ignore = true)
-    public void update(DisciplinaForm dto, @MappingTarget Disciplina entity);
+    @Override
+    public Disciplina formToEntity(DisciplinaForm dto);
 
     @Mapping(target = "id", ignore = true)
-    public Disciplina toEntity(DisciplinaForm form);
+    @Override
+    public Disciplina update(DisciplinaForm dto, @MappingTarget Disciplina entity);
+    
 }

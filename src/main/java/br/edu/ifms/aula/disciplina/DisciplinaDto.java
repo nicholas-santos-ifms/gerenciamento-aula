@@ -4,6 +4,7 @@
  */
 package br.edu.ifms.aula.disciplina;
 
+import br.edu.ifms.aula.curso.CursoDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -12,18 +13,18 @@ import lombok.NoArgsConstructor;
 
 /**
  *
- * @author 07076063140
+ * @author 1513003
  */
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
-
 public class DisciplinaDto {
-    
+
     private Long id;
     private String nome;
-    private double cargaHoraria;
-    private String ementa ;
+    private Double cargaHoraria;
+    private String ementa;
+    private CursoDto curso;
 }

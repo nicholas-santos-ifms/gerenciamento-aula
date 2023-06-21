@@ -1,29 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.ifms.aula.turma;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-/**
- *
- * @author 07076063140
- */
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class TurmaDto extends AdapterBaseObjectDto {
 
-public class TurmaDto {
-    
-    private Long id;
-    private String nome;
-    private double cargaHoraria;
-    private String ementa ;
+    private int ano;
+    private String nomeCurso;
+    private String nomeCampus;
 }
