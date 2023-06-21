@@ -4,24 +4,30 @@
  */
 package br.edu.ifms.aula.disciplina;
 
+import br.edu.ifms.arch.BaseObject;
+import jakarta.persistence.Entity;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
 
 /**
  *
  * @author usuario
  */
-@Getter
+@Data
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-public class Disciplina {
-    private Long id;
-    private String nome;
-    private Double cargaHoraria;
+@SuperBuilder
+@Entity
+@SequenceGenerator(sequenceName = "Disciplina_sequence", name = "baseObjectSequence", allocationSize = 1)
+public class Disciplina extends BaseObject {
+
+ 
+    private String cargaHoraria;
     private String ementa;
 }
