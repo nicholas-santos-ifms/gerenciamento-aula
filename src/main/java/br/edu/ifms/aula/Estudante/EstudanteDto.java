@@ -4,11 +4,12 @@
  */
 package br.edu.ifms.aula.Estudante;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -17,11 +18,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
-public class EstudanteDto {
-    private Long id;
-    private String nome;
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
+public class EstudanteDto extends AdapterBaseObjectDto {
+    
     private String ra;
     private String cpf;
     private String situacao;

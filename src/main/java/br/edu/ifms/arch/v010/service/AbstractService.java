@@ -67,7 +67,7 @@ public abstract class AbstractService<T, K, F, R extends IArchRepository<T, K>>
                 .map(entity -> mapper.update(form, entity))
                 .orElseThrow(() -> new BaseObjectNotFoundException(
                 String
-                        .format("Não existe objetio da classe %s com o código %s.",
+                        .format("Não existe objeto da classe %s com o código %s.",
                                 this.getClass().getName(), id.toString())
         ));
         

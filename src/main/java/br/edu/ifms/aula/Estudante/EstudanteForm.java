@@ -4,23 +4,24 @@
  */
 package br.edu.ifms.aula.Estudante;
 
+import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author 07041626105
  */
-@Builder
+@SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-public class EstudanteForm {
-    private String nome;
+@EqualsAndHashCode(callSuper = true)
+public class EstudanteForm extends AdapterBaseObjectForm {
+    
     private String ra;
     private String cpf;
     private String situacao;

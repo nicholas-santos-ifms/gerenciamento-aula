@@ -12,7 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
  *
  * @author 1513003
  */
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Professor n„o encontrado")
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Professor n√£o encontrado")
 public class ProfessorNotFoundException extends ResponseStatusException {
 
     public ProfessorNotFoundException(String errorMessage) {
