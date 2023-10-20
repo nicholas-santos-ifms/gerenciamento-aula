@@ -4,8 +4,8 @@
  */
 package br.edu.ifms.aula.curso;
 
-import br.edu.ifms.arch.BaseObject;
-import br.edu.ifms.aula.campus.Campus;
+import br.edu.ifms.arch.v010.BaseObject;
+import br.edu.ifms.aula.campus.Organizacao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
@@ -29,6 +29,6 @@ import lombok.experimental.SuperBuilder;
 public class Curso extends BaseObject {
     
     @ManyToOne
-    private Campus campus;
+    private Organizacao campus;
     
 }

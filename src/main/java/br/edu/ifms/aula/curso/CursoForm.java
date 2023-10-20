@@ -4,8 +4,8 @@
  */
 package br.edu.ifms.aula.curso;
 
-import br.edu.ifms.arch.dto.AdapterBaseObjectForm;
-import br.edu.ifms.aula.campus.CampusDto;
+import br.edu.ifms.arch.v010.dto.AdapterBaseObjectForm;
+import br.edu.ifms.aula.campus.OrganizacaoDto;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,5 +25,5 @@ import lombok.experimental.SuperBuilder;
 public class CursoForm extends AdapterBaseObjectForm {
     
     @NotNull
-    public CampusDto campus;
+    public OrganizacaoDto campus;
 }

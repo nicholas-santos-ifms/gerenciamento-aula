@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.curso;
 
-import br.edu.ifms.arch.service.AbstractBasicService;
+import br.edu.ifms.arch.v010.service.AbstractBasicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

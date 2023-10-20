@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.curso;
 
-import br.edu.ifms.arch.controller.AbstractBasicController;
+import br.edu.ifms.arch.v010.controller.AbstractBasicController;
 import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

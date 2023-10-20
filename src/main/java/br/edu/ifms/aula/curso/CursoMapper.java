@@ -5,8 +5,8 @@
 package br.edu.ifms.aula.curso;
 
 import br.edu.ifms.aula.campus.*;
-import br.edu.ifms.arch.BaseObjectMapper;
-import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.arch.v010.BaseObjectMapper;
+import br.edu.ifms.arch.v010.ISimpleMapper;
 import java.util.List;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
@@ -20,7 +20,7 @@ import org.springframework.data.domain.Page;
  */
 @Mapper(
         config = BaseObjectMapper.class,
-        uses = {CampusMapper.class}
+        uses = {OrganizacaoMapper.class}
         )
 public interface CursoMapper extends ISimpleMapper<Curso, CursoDto, CursoForm> {
     
