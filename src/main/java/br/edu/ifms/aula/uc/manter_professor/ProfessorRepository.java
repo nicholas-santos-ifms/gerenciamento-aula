@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package br.edu.ifms.aula.professor;
+package br.edu.ifms.aula.uc.manter_professor;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import br.edu.ifms.arch.v010.repository.IArchRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProfessorRepository 
-        extends JpaRepository<Professor, Long> {
+        extends IArchRepository<Professor, Long> {
     
 }

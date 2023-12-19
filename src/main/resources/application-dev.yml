@@ -1,0 +1,65 @@
+# Log
+logging:
+    level:
+        root: INFO
+        org:
+            hibernate: error
+            SQL: DEBUG
+            type:
+                descriptor:
+                    sql:
+                        BasicBinder: TRACE
+            springframework:
+                web: debug
+                jdbc:
+                    core:
+                        StatementCreatorUtils: TRACE
+                        JdbcTemplate: INFO
+    
+spring:
+    config:
+        activate:
+            on-profile: dev
+    devtools:
+        add-properties: false
+    
+# SQL prod/test
+    sql:
+        init:
+            encoding: UTF-8
+            mode: ALWAYS
+
+# #datasourde
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:mem:aulas-dev
+        username: sa
+        password: 
+        plataform: dev
+        initialization-mode: ALWAYS
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
+    jpa:
+        show-sql: true
+        properties:
+            format_sql: true
+            dialect: org.hibernate.dialect.H2Dialect
+            hibernate:
+                format_sql: true
+
+        hibernate:
+            ddl-auto: create-drop
+            jdbc:
+                lob:
+                    non_contextual_creation: true
+#Hibernate will merge each entity copy detected while cascading the merge operation. In the process of merging each entity copy
+            event:
+                merge:
+                    entity_copy_observer: allow
+## MULTIPART (MultipartProperties)
+# Enable multipart uploads
+    servlet:
+        multipart:
+            location: ${user.dir}/webapps/tmp

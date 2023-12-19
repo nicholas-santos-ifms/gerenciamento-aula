@@ -1,6 +1,6 @@
-package br.edu.ifms.aula.turma;
+package br.edu.ifms.aula.uc.manter_turma;
 
-import br.edu.ifms.arch.service.AbstractService;
+import br.edu.ifms.arch.v010.service.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

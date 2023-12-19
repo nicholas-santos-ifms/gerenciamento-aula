@@ -1,4 +1,5 @@
-package br.edu.ifms.aula.turma;
+package br.edu.ifms.aula.uc.manter_turma;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.ResponseStatusException;
@@ -8,4 +9,5 @@ public class TurmaNotFoundException extends ResponseStatusException {
 
     public TurmaNotFoundException(String errorMessage) {
         super(HttpStatus.NOT_FOUND, errorMessage);
-}}
+    }
+}

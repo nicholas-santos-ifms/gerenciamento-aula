@@ -6,7 +6,7 @@ package br.edu.ifms.aula.classe;
 
 import br.edu.ifms.arch.BaseObjectMapper;
 import br.edu.ifms.arch.ISimpleMapper;
-import br.edu.ifms.aula.disciplina.DisciplinaMapper;
+import br.edu.ifms.aula.uc.manter_disciplina.DisciplinaMapper;
 import br.edu.ifms.aula.periodo.PeriodoMapper;
 import br.edu.ifms.aula.turma.TurmaMapper;
 import java.util.List;

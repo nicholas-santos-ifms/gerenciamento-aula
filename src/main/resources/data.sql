@@ -7,12 +7,12 @@
  * Created: 2 de mai. de 2023
  */
 
-INSERT INTO organizacao (id, nome, sigla, organizacao_pai_id, created_at) VALUES
+INSERT INTO organizacao (id, nome, sigla, superior) VALUES
 (1, 'Campus Naviraí', 'NV', null, now()),
-(2, 'Coordenação do Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas', 'NV-COTAD', 1, now()),
-(3, 'Coordenação do Curso Superior de Agronomia', 'NV-COBAG', 1, now()),
-(4, 'Coordenação do Curso Técnico Integrado de Informática para Internet', 'NV-COINF', 1, now()),
-(5, 'Coordenação do Curso Técnico Integrado de Agricultura', 'NV-COREN', 1, now());
+(2, 'Coordenação do Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas', 'NV-COTAD', 1),
+(3, 'Coordenação do Curso Superior de Agronomia', 'NV-COBAG', 1),
+(4, 'Coordenação do Curso Técnico Integrado de Informática para Internet', 'NV-COINF', 1),
+(5, 'Coordenação do Curso Técnico Integrado de Agricultura', 'NV-COREN', 1);
 
 ALTER SEQUENCE organizacao_sequence RESTART WITH 6;
 

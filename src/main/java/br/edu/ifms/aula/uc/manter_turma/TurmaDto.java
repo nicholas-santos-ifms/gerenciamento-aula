@@ -1,6 +1,6 @@
-package br.edu.ifms.aula.turma;
+package br.edu.ifms.aula.uc.manter_turma;
 
-import br.edu.ifms.arch.dto.AdapterBaseObjectDto;
+import br.edu.ifms.arch.v010.dto.AdapterBaseObjectDto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

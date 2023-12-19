@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.Estudante;
+package br.edu.ifms.aula.uc.manter_estudante;
 
-import br.edu.ifms.arch.BaseObjectMapper;
-import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.arch.v010.BaseObjectMapper;
+import br.edu.ifms.arch.v010.ISimpleMapper;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

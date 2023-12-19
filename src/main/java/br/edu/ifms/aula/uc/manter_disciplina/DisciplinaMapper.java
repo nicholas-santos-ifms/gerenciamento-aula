@@ -2,12 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.disciplina;
+package br.edu.ifms.aula.uc.manter_disciplina;
 
-import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.arch.v010.BaseObjectMapper;
+import br.edu.ifms.arch.v010.ISimpleMapper;
+import br.edu.ifms.aula.campus.OrganizacaoMapper;
 import br.edu.ifms.aula.curso.CursoMapper;
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
@@ -16,18 +18,22 @@ import org.mapstruct.factory.Mappers;
  * @author 1513003
  */
 @Mapper(
-        uses = {CursoMapper.class}
+        config = BaseObjectMapper.class,
+        uses = {
+            OrganizacaoMapper.class,
+            CursoMapper.class
+        }
 )
 public interface DisciplinaMapper extends ISimpleMapper<Disciplina, DisciplinaDto, DisciplinaForm> {
     
     public static final DisciplinaMapper INSTANCE = Mappers
             .getMapper(DisciplinaMapper.class);
 
-    @Mapping(target = "id", ignore = true)
+    @InheritConfiguration(name = "toEntity")
     @Override
     public Disciplina formToEntity(DisciplinaForm dto);
 
-    @Mapping(target = "id", ignore = true)
+    @InheritConfiguration(name = "update")
     @Override
     public Disciplina update(DisciplinaForm dto, @MappingTarget Disciplina entity);
     

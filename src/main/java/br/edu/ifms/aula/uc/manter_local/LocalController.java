@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.local;
+package br.edu.ifms.aula.uc.manter_local;
 
-import br.edu.ifms.arch.controller.AbstractBasicController;
+import br.edu.ifms.arch.v010.controller.AbstractBasicController;
 import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +28,7 @@ public class LocalController extends AbstractBasicController<Local, LocalDto, Lo
 
     @Override
     public URI createUri(Local entity, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/local/{id}")
+        return uriBuilder.path("/api/local/{id}")
                 .buildAndExpand(entity.getId())
                 .toUri();
     }

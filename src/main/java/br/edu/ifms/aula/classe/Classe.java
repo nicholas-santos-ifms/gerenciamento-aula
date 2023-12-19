@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.classe;
 
-import br.edu.ifms.aula.disciplina.Disciplina;
+import br.edu.ifms.aula.uc.manter_disciplina.Disciplina;
 import br.edu.ifms.aula.periodo.Periodo;
 import br.edu.ifms.aula.turma.Turma;
 import jakarta.persistence.CascadeType;

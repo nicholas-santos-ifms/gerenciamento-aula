@@ -12,7 +12,6 @@ import jakarta.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -21,7 +20,6 @@ import lombok.experimental.SuperBuilder;
  *
  * @author santos
  */
-@Data
 @SuperBuilder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
@@ -58,5 +56,15 @@ public class BaseObject implements IBase, Serializable {
     @Override
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public void setCreatedAt(LocalDateTime value) {
+        this.createdAt = value;
+    }
+
+    @Override
+    public LocalDateTime getCreatedAt() {
+        return this.createdAt;
     }
 }

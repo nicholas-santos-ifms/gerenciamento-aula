@@ -1,6 +1,6 @@
-package br.edu.ifms.aula.turma;
+package br.edu.ifms.aula.uc.manter_turma;
 
-import br.edu.ifms.arch.controller.AbstractSimpleController;
+import br.edu.ifms.arch.v010.controller.AbstractSimpleController;
 import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

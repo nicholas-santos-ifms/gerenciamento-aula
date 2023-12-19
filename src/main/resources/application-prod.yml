@@ -1,0 +1,67 @@
+#logging:
+#    level:
+#        root: WARN
+#        org:
+#            hibernate: error
+#            springframework:
+#                web: debug
+
+logging:
+    level:
+        root: INFO
+        org:
+            hibernate: error
+            SQL: DEBUG
+            type:
+                descriptor:
+                    sql:
+                        BasicBinder: TRACE
+            springframework:
+                web: debug
+                jdbc:
+                    core:
+                        StatementCreatorUtils: TRACE
+                        JdbcTemplate: INFO
+
+#debug
+debug: false
+
+spring:
+    config:
+        activate:
+            on-profile: prod
+    devtools:
+        add-properties: false
+        
+## MULTIPART (MultipartProperties)
+# Enable multipart uploads
+    servlet:
+        multipart:
+            location: ${user.dir}/webapps/beneficios/tmp
+
+# Datasourde
+    datasource:
+        driverClassName: org.postgresql.Driver
+        url: jdbc:postgresql://${BENEFICIOS_DB_URL}/${BENEFICIOS_DB_NAME}
+        username: ${BENEFICIOS_DB_USER}
+        password: ${BENEFICIOS_DB_PASS}
+        plataform: prod
+        initialization-mode: ALWAYS
+    jpa:
+        show_sql: true
+        properties: 
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+# usado para controlar um BUG do postgresql
+            jdbc:
+                lob:
+                    non_contextual_creation: true
+            hibernate:
+                format_sql: true
+        hibernate:
+            ddl-auto: update
+# SQL prod/test/dev
+    sql:
+        init:
+            mode: NEVER
+    batch:
+        initialize-schema: NEVER

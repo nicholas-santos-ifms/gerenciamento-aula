@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.classe;
 
-import br.edu.ifms.aula.disciplina.DisciplinaDto;
+import br.edu.ifms.aula.uc.manter_disciplina.DisciplinaDto;
 import br.edu.ifms.aula.periodo.PeriodoDto;
 import br.edu.ifms.aula.turma.TurmaDto;
 import java.time.LocalDate;

@@ -2,10 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.local;
+package br.edu.ifms.aula.uc.manter_organizacao;
 
-import br.edu.ifms.arch.BaseObject;
+import br.edu.ifms.arch.v010.BaseObject;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,7 +22,11 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@SequenceGenerator(sequenceName = "local_sequence", name = "baseObjectSequence", allocationSize = 1)
-public class Local extends BaseObject {
+@SequenceGenerator(sequenceName = "organizacao_sequence", name = "baseObjectSequence", allocationSize = 1)
+public class Organizacao extends BaseObject {
     
+    private String sigla;
+    
+    @ManyToOne
+    private Organizacao superior;
 }

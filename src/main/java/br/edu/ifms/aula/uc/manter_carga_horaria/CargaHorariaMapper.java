@@ -2,16 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package br.edu.ifms.aula.carga_horaria;
+package br.edu.ifms.aula.uc.manter_carga_horaria;
 
-import br.edu.ifms.arch.BaseObjectMapper;
-import br.edu.ifms.arch.ISimpleMapper;
-import java.util.List;
+import br.edu.ifms.arch.v010.BaseObjectMapper;
+import br.edu.ifms.arch.v010.ISimpleMapper;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
-import org.springframework.data.domain.Page;
 
 /**
  *
@@ -28,24 +26,7 @@ public interface CargaHorariaMapper extends ISimpleMapper<CargaHoraria, CargaHor
     @Override
     public CargaHoraria formToEntity(CargaHorariaForm dto);
 
-    @Override
-    public CargaHoraria dtoToEntity(CargaHorariaDto dto);
-
-    @Override
-    public CargaHorariaDto toDto(CargaHoraria entity);
-
     @InheritConfiguration(name = "update")
     @Override
     public CargaHoraria update(CargaHorariaForm dto, @MappingTarget CargaHoraria entity);
-
-    @Override
-    public List<CargaHoraria> toEntityList(List<CargaHorariaDto> items);
-
-    @Override
-    public List<CargaHorariaDto> toDtoList(List<CargaHoraria> items);
-
-    @Override
-    public default Page<CargaHorariaDto> toDtoPage(Page<CargaHoraria> items) {
-        return items.map(entity -> toDto(entity));
-    }
 }

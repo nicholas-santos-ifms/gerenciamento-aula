@@ -2,34 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.disciplina;
+package br.edu.ifms.aula.uc.manter_disciplina;
 
+import br.edu.ifms.arch.v010.BaseObject;
 import br.edu.ifms.aula.curso.Curso;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  * @author 1513003
  */
 @Data
-@AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor
-@EqualsAndHashCode
-@Builder
+@EqualsAndHashCode(callSuper = true)
 @Entity
-public class Disciplina {
-    @Id
-    @GeneratedValue(generator = "disciplina_sequence")
-    private Long id;
-    private String nome;
+@SequenceGenerator(sequenceName = "disciplina_sequence", name = "baseObjectSequence", allocationSize = 1)
+public class Disciplina extends BaseObject {
+    
     private Double cargaHoraria;
     private String ementa;
     

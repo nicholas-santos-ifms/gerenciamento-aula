@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifms.aula.Estudante;
+package br.edu.ifms.aula.uc.manter_estudante;
 
-import br.edu.ifms.arch.BaseObject;
+import br.edu.ifms.arch.v010.BaseObject;
 import jakarta.persistence.Entity;
 import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
