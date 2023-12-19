@@ -25,9 +25,10 @@ public abstract class AbstractUsuarioDto
         extends AdapterBaseObjectDto {
     
     private ArquivoDto foto;
-    private String telefone;
+    private String celular;
     private String email;
     private Status status;
     private Boolean enabled;
+    private TipoNotificacao tipoNotificacao;
 
 }

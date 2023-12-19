@@ -22,7 +22,6 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 public class UsuarioDto extends AbstractUsuarioDto {
 
-    private TipoNotificacao tipoNotificacao;
     private List<PerfilLeanDto> perfis;
 
 }

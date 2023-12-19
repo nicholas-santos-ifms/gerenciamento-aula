@@ -38,12 +38,14 @@ public class UsuarioForm
     @Email(message = "Você deve informar um e-mail válido.")
     private String email;
 
-    private String telefone;
+    private String celular;
+    
+    private TipoNotificacao tipoNotificacao;
 
     private Status status;
 
     private boolean enabled;
-    
+
     @Size(min = 1, message = "Você deve informar ao menos 1 perfil para o usuário")
     private List<@Valid PerfilLeanDto> perfis;
 }

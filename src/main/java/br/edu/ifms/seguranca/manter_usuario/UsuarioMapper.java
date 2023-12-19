@@ -15,7 +15,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
-import org.springframework.data.domain.Page;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -37,7 +36,6 @@ public interface UsuarioMapper
     @InheritConfiguration(name = "toEntity")
     @Mapping(target = "senha", ignore = true)
     @Mapping(target = "status", ignore = true)
-    @Mapping(target = "tipoNotificacao", ignore = true)
     @Mapping(target = "enabled", ignore = true)
     @Mapping(target = "failedAttempt", ignore = true)
     @Mapping(target = "lockTime", ignore = true)
@@ -77,10 +75,8 @@ public interface UsuarioMapper
 
     @InheritConfiguration(name = "update")
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "senha", ignore = true)
     @Mapping(target = "status", ignore = true)
-    @Mapping(target = "tipoNotificacao", ignore = true)
     @Mapping(target = "enabled", ignore = true)
     @Mapping(target = "failedAttempt", ignore = true)
     @Mapping(target = "lockTime", ignore = true)

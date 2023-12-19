@@ -77,7 +77,7 @@ public class Usuario extends BaseObject implements UserDetails, Serializable {
     @Enumerated(EnumType.STRING)
     private TipoNotificacao tipoNotificacao;
 
-    private String telefone;
+    private String celular;
 
     @Column(columnDefinition = "boolean default false")
     private boolean enabled;

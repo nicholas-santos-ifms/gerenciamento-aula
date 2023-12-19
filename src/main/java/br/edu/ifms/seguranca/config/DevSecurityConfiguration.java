@@ -5,13 +5,19 @@
  */
 package br.edu.ifms.seguranca.config;
 
+import br.edu.ifms.seguranca.config.filters.JwtAuthenticationFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.security.web.savedrequest.NullRequestCache;
 import org.springframework.security.web.savedrequest.RequestCache;
 
@@ -24,6 +30,15 @@ import org.springframework.security.web.savedrequest.RequestCache;
 @EnableWebSecurity
 public class DevSecurityConfiguration {
 
+    @Autowired
+    private AuthenticationProvider authenticationProvider;
+    
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthFilter;
+    
+    @Autowired
+    private LogoutHandler logoutHandler;
+    
     /**
      * Método de configuração de segurança. Método utilizado para configurar a
      * autenticação e a autorização de acesso ao sistema.
@@ -67,7 +82,22 @@ public class DevSecurityConfiguration {
          */
         http
                 .sessionManagement((session)
-                        -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                        -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authenticationProvider(authenticationProvider);
+        
+        /**
+         * Filtros de controle de autenticação por token
+         */
+        http.addFilterBefore(
+                jwtAuthFilter,
+                UsernamePasswordAuthenticationFilter.class)
+                .logout(logout -> logout
+                // URL padrão para logout
+                .logoutUrl("/api/auth/logout")
+                .addLogoutHandler(logoutHandler)
+                .logoutSuccessHandler((request, response, authentication)
+                        -> SecurityContextHolder.clearContext())
+                .invalidateHttpSession(true));
 
         return http.build();
     }

@@ -26,8 +26,7 @@ import org.springframework.security.web.savedrequest.RequestCache;
  *
  * @author nicholas.santos
  */
-
-@Profile(value = {"prod", "dev"})
+@Profile(value = {"prod"})
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
@@ -35,10 +34,10 @@ public class SecurityConfiguration {
 
     @Autowired
     private AuthenticationProvider authenticationProvider;
-    
+
     @Autowired
     private JwtAuthenticationFilter jwtAuthFilter;
-    
+
     @Autowired
     private LogoutHandler logoutHandler;
 
@@ -69,20 +68,13 @@ public class SecurityConfiguration {
                 -> authorize
                         .requestMatchers(HttpMethod.POST, "/api/auth")
                             .permitAll()
-                        .requestMatchers("/api/auth/logout")
+                        .requestMatchers("/api/auth", "/api/auth/**")
                             .permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuario/forgot-password")
                             .permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuario/reset-password")
                             .permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/code/verification;*")
-                            .permitAll()
-                        
-                        .requestMatchers(HttpMethod.GET, "/api/evento/diretorio/*")
-                            .permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/evento/list")
-                            .permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/api/convite/avaliacao/**")
+                        .requestMatchers(HttpMethod.GET, "/api/code/verification/*")
                             .permitAll()
                         // exige que a partir daqui qualquer requisição deve exigir autenticação
                         .anyRequest().authenticated()
@@ -110,7 +102,7 @@ public class SecurityConfiguration {
         http.addFilterBefore(
                 jwtAuthFilter,
                 UsernamePasswordAuthenticationFilter.class)
-            .logout(logout -> logout
+                .logout(logout -> logout
                 // URL padrão para logout
                 .logoutUrl("/api/auth/logout")
                 .addLogoutHandler(logoutHandler)
