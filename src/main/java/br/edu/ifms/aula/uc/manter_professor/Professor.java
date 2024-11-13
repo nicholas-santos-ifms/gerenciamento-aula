@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.uc.manter_professor;
 
-import br.edu.ifms.seguranca.manter_usuario.Usuario;
+import br.edu.ifms.aula.uc.manter_usuario.Usuario;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;

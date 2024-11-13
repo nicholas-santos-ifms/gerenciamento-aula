@@ -1,7 +1,7 @@
 package br.edu.ifms.aula.uc.manter_turma;
 
 import br.edu.ifms.arch.v010.dto.AdapterBaseObjectForm;
-import br.edu.ifms.aula.curso.CursoDto;
+import br.edu.ifms.aula.uc.manter_curso.CursoDto;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

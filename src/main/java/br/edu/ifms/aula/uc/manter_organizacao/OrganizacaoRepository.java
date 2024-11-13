@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
  * @author nicho
  */
 @Repository
-public interface OrganizacaoRepository extends IArchRepository<Organizacao, Long> {
+public interface OrganizacaoRepository 
+        extends IArchRepository<Organizacao, Long> {
     
 }

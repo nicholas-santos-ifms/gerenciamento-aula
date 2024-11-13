@@ -1,7 +1,7 @@
 package br.edu.ifms.aula.uc.manter_turma;
 
 import br.edu.ifms.arch.v010.BaseObject;
-import br.edu.ifms.aula.curso.Curso;
+import br.edu.ifms.aula.uc.manter_curso.Curso;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;

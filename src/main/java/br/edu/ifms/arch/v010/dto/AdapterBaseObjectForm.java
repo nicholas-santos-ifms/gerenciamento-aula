@@ -27,7 +27,7 @@ public class AdapterBaseObjectForm implements IBaseForm  {
 
     @NotNull(message = "O nome não deve ser nulo")
     @NotEmpty(message = "O nome não deve ser vazio")
-    @NotBlank(message = "O Nome não deve conter espa�os em branco.")
+    @NotBlank(message = "O Nome não deve conter espaços em branco.")
     @Length(min = 3, message = "O Nome deve conter ao menos 3 caracteres.")
     protected String nome;
     

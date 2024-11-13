@@ -8,9 +8,11 @@ import br.edu.ifms.arch.v010.BaseObject;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
@@ -20,11 +22,14 @@ import lombok.experimental.SuperBuilder;
 @Data
 @SuperBuilder
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true, onlyExplicitlyIncluded = true)
+@ToString(onlyExplicitlyIncluded = true)
 @Entity
 @SequenceGenerator(sequenceName = "organizacao_sequence", name = "baseObjectSequence", allocationSize = 1)
 public class Organizacao extends BaseObject {
     
+    @ToString.Include
     private String sigla;
     
     @ManyToOne

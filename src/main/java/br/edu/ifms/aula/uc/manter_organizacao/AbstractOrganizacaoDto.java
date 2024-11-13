@@ -18,7 +18,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class AbstractOrganizacaoDto extends AdapterBaseObjectDto {
+public abstract class AbstractOrganizacaoDto extends AdapterBaseObjectDto {
     
     private String sigla;
 }

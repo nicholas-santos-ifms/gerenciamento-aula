@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.uc.manter_professor;
 
-import br.edu.ifms.seguranca.manter_usuario.AbstractUsuarioDto;
+import br.edu.ifms.aula.uc.manter_usuario.AbstractUsuarioDto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -19,7 +19,8 @@ import org.springframework.util.StringUtils;
  * @author nicho
  */
 @Service
-public class OrganizacaoService extends AbstractService<Organizacao, Long, OrganizacaoForm, OrganizacaoRepository> {
+public class OrganizacaoService extends 
+        AbstractService<Organizacao, Long, OrganizacaoForm, OrganizacaoRepository> {
 
     @Autowired
     @Override

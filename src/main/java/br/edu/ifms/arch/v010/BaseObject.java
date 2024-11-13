@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
@@ -25,14 +26,15 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
-public class BaseObject implements IBase, Serializable {
+@ToString(onlyExplicitlyIncluded = true)
+public abstract class BaseObject implements IBase, Serializable {
 
     @EqualsAndHashCode.Include
+    @ToString.Include
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "baseObjectSequence")
     private Long id;
-
-    @EqualsAndHashCode.Include
+    @ToString.Include
     private String nome;
 
     @Column(columnDefinition = "timestamp(6) default now()")

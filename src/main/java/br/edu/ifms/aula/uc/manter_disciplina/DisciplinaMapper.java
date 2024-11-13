@@ -6,8 +6,8 @@ package br.edu.ifms.aula.uc.manter_disciplina;
 
 import br.edu.ifms.arch.v010.BaseObjectMapper;
 import br.edu.ifms.arch.v010.ISimpleMapper;
-import br.edu.ifms.aula.campus.OrganizacaoMapper;
-import br.edu.ifms.aula.curso.CursoMapper;
+import br.edu.ifms.aula.manter_organizacao.OrganizacaoMapper;
+import br.edu.ifms.aula.uc.manter_curso.CursoMapper;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;

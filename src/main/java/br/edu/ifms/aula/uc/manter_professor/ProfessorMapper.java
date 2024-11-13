@@ -6,9 +6,9 @@ package br.edu.ifms.aula.uc.manter_professor;
 
 import br.edu.ifms.arch.v010.BaseObjectMapper;
 import br.edu.ifms.arch.v010.ILeanMapper;
-import br.edu.ifms.seguranca.manter_arquivo.ArquivoMapper;
-import br.edu.ifms.seguranca.manter_perfil.PerfilMapper;
-import br.edu.ifms.seguranca.manter_usuario.UsuarioMapper;
+import br.edu.ifms.aula.uc.manter_arquivo.ArquivoMapper;
+import br.edu.ifms.aula.uc.manter_perfil.PerfilMapper;
+import br.edu.ifms.aula.uc.manter_usuario.UsuarioMapper;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

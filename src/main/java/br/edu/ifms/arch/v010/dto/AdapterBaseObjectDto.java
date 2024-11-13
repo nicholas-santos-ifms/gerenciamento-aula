@@ -4,7 +4,6 @@
  */
 package br.edu.ifms.arch.v010.dto;
 
-import br.edu.ifms.arch.v010.IBase;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

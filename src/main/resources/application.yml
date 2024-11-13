@@ -5,7 +5,7 @@ spring:
     devtools:
         add-properties: true
     profiles:
-        active: prod
+        active: dev
     main:
         allow-circular-references: true
         allow-bean-definition-overriding: true

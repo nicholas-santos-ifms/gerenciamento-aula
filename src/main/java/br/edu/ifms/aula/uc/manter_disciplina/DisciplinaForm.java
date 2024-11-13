@@ -5,7 +5,7 @@
 package br.edu.ifms.aula.uc.manter_disciplina;
 
 import br.edu.ifms.arch.v010.dto.AdapterBaseObjectForm;
-import br.edu.ifms.aula.curso.CursoDto;
+import br.edu.ifms.aula.uc.manter_curso.CursoDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

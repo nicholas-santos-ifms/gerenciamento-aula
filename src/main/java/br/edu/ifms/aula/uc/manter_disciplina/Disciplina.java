@@ -5,7 +5,7 @@
 package br.edu.ifms.aula.uc.manter_disciplina;
 
 import br.edu.ifms.arch.v010.BaseObject;
-import br.edu.ifms.aula.curso.Curso;
+import br.edu.ifms.aula.uc.manter_curso.Curso;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;

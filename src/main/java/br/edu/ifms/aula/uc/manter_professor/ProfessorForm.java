@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.uc.manter_professor;
 
-import br.edu.ifms.seguranca.manter_usuario.UsuarioForm;
+import br.edu.ifms.aula.uc.manter_usuario.UsuarioForm;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
