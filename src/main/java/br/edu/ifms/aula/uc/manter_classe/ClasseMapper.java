@@ -4,11 +4,11 @@
  */
 package br.edu.ifms.aula.uc.manter_classe;
 
-import br.edu.ifms.arch.BaseObjectMapper;
-import br.edu.ifms.arch.ISimpleMapper;
+import br.edu.ifms.arch.v010.BaseObjectMapper;
+import br.edu.ifms.arch.v010.ISimpleMapper;
 import br.edu.ifms.aula.uc.manter_disciplina.DisciplinaMapper;
-import br.edu.ifms.aula.periodo.PeriodoMapper;
-import br.edu.ifms.aula.turma.TurmaMapper;
+import br.edu.ifms.aula.uc.manter_periodo.PeriodoMapper;
+import br.edu.ifms.aula.uc.manter_turma.TurmaMapper;
 import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

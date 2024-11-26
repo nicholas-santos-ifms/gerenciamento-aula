@@ -7,8 +7,8 @@
  * Created: 2 de mai. de 2023
  */
 
-INSERT INTO organizacao (id, nome, sigla, superior) VALUES
-(1, 'Campus Naviraí', 'NV', null, now()),
+INSERT INTO organizacao (id, nome, sigla, superior_id) VALUES
+(1, 'Campus Naviraí', 'NV', null),
 (2, 'Coordenação do Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas', 'NV-COTAD', 1),
 (3, 'Coordenação do Curso Superior de Agronomia', 'NV-COBAG', 1),
 (4, 'Coordenação do Curso Técnico Integrado de Informática para Internet', 'NV-COINF', 1),
@@ -20,7 +20,7 @@ INSERT INTO professor (id, nome, email) VALUES
 (1, 'Nicholas', 'nicholas.santos@ifms.edu.br'),
 (2, 'Laurentino', 'laurentino.dantas@ifms.edu.br');
 
-ALTER SEQUENCE professor_seq RESTART WITH 3;
+ALTER SEQUENCE usuario_sequence RESTART WITH 3;
 
 INSERT INTO curso (id, nome, created_at, campus_id) VALUES
 (1, 'Agronomia', now(), 1),

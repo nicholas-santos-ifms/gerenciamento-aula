@@ -4,9 +4,9 @@
  */
 package br.edu.ifms.aula.uc.manter_curso;
 
-import br.edu.ifms.aula.manter_organizacao.OrganizacaoMapper;
 import br.edu.ifms.arch.v010.BaseObjectMapper;
 import br.edu.ifms.arch.v010.ISimpleMapper;
+import br.edu.ifms.aula.uc.manter_organizacao.OrganizacaoMapper;
 import java.util.List;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;

@@ -82,9 +82,7 @@ public interface UsuarioRepository extends IArchRepository<Usuario, Long> {
     
 
     Optional<Usuario> findByEmailAndStatusAndEnabled(String email, Status status, boolean enabled);
-    
-    Optional<Usuario> findByEmailOrCpf(String email, String cpf);
-    
+        
     @Modifying
     @Query("update Usuario u set "
             + "u.senha = ?2 "

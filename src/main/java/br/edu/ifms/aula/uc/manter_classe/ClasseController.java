@@ -4,7 +4,7 @@
  */
 package br.edu.ifms.aula.uc.manter_classe;
 
-import br.edu.ifms.arch.controller.AbstractSimpleController;
+import br.edu.ifms.arch.v010.controller.AbstractSimpleController;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
